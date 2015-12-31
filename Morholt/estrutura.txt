@@ -1,0 +1,7 @@
+WizardActivity
+    @Inject
+    protected PageList pageList; 
+
+
+
+ 

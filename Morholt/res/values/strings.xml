@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">morholt</string>
+    <string name="action_settings">Configurações</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="qtde">qtde</string>
+    <string name="material">material</string>
+    <string name="radio_material_ceramico_construtivo">cerâmico construtivo</string>
+    <string name="radio_material_louca">louça</string>
+    <string name="radio_material_metal">metal</string>
+    <string name="radio_material_vidro">vidro</string>
+    <string name="radio_material_ceramica">cerâmica</string>
+    <string name="radio_material_litico">lítico</string>
+    <string name="radio_material_fauna">fauna</string>
+    <string name="radio_material_outro">outro</string>
+    <string name="origem">origem</string>
+    <string name="radio_origem_coleta_sistematica">coleta sistemática</string>
+    <string name="radio_origem_coleta_assistematica">coleta assistemática</string>
+    <string name="radio_origem_poco_teste">poço-teste</string>
+    <string name="radio_orgiem_sondagem">sondagem</string>
+    <string name="radio_origem_quadricula">quadrícula</string>
+    <string name="radio_origem_trincheira">trincheira</string>
+    <string name="radio_origem_outra">outra</string>
+    <string name="intervencao">intervenção</string>
+    <string name="zona">zona</string>
+    <string name="x">x</string>
+    <string name="y">y</string>
+    <string name="nivel">nível</string>
+    <string name="usuario">usuário</string>
+    <string name="senha">senha</string>
+    <string name="sitio">sítio: </string>
+    <string name="projeto_no_sitio">projeto no sítio: </string>
+    <string name="etapa">etapa: </string>
+    <string name="tirar_foto">Tirar Foto</string>
+    <string name="action_map">exibir mapa</string>
+    <string name="action_collect_pages">coletar</string>
+    <string name="buttonNew">novo</string>
+    <string name="buttonLoad">carregar</string>
+    <string name="load_selected_question">carregar coleta selecionada?</string>
+    <string name="yes">sim</string>
+    <string name="cancel">cancelar</string>
+    <string name="obtaining_position">Obtendo posição pelo GPS..</string>
+    <string name="stop">Parar</string>
+    <string name="obtain_location">Procurar</string>
+    <string name="capital_off">OFF</string>
+    <string name="capital_on">ON</string>
+    <string name="buttonNewBasedOnLastOne">Novo baseado</string>
+    <string name="buttons">Escolha</string>
+    <string name="rescue">Trata-se da etapa de resgate arqueológico</string>
+    <string name="license_step">Qual a etapa do licenseamento o projeto se encontra:</string>
+    <string name="intervention_type">Qual a intervenção efetuada:</string>
+    <string name="gps_entry">Escolha da entrada manual ou automática?</string>
+    <string name="label_your_name">TODO</string>
+    <string name="hint_your_name">TODO</string>
+    <string name="label_your_email">TODO</string>
+    <string name="hint_your_email">TODO</string>
+    
+    
+    
+        <string name="zzz">ZzZ</string>
+    
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="finish">Submit order</string>
+    <string name="review">Revisão</string>
+
+
+    <string name="submit_confirm_message">Place the order with the deli? You will receive an email
+        confirmation.</string>
+    <string name="submit_confirm_button">Place order</string>
+    <string name="sending">enviando</string>
+    <string name="settings">configuração</string>
+    <string name="obter_dados_do_projeto">project_data</string>
+    <string name="project_data">Obter dados do projeto</string>
+    <string name="choose_account">Trocar de usuário</string>
+    <string name="lat">lat</string>
+    <string name="longitude">long</string>
+</resources>

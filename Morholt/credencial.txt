@@ -1,0 +1,7 @@
+wnindows->pref->android->build
+
+https://console.developers.google.com/project/projetoarqueologia/apiui/credential#
+
+CollectEndpoint.ANDROID_CLIENT_ID
+
+atualizar endpoint do android

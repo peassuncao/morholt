@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest android:versionCode="6" android:versionName="0.0.6" package="br.fapema.morholt.android" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="23" />
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <permission android:name="br.fapema.morholt.android.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="br.fapema.morholt.android.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme"
+        android:name="br.fapema.morholt.android.MyApplication">
+        <activity android:label="@string/app_name" android:name="br.fapema.morholt.android.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+    
+         <activity android:label="@string/app_name" 
+             android:name="br.fapema.morholt.android.WizardActivity"
+         >
+        </activity>
+        <activity android:label="@string/app_name"  android:name="br.fapema.morholt.android.initial.load.LoadActivity">
+        </activity>
+        <activity android:label="@string/settings"  android:name="br.fapema.morholt.android.settings.SettingsActivity">
+        </activity>
+        <activity android:label="@string/app_name" android:name="br.fapema.morholt.android.initial.InitialContainerFragment">
+        </activity>
+        <activity android:label="@string/app_name" android:name="br.fapema.morholt.android.collectpages.BarCodeFragment">
+        </activity>
+
+        <activity android:name="com.google.zxing.client.android.CaptureActivity"
+           android:screenOrientation="landscape"
+           android:configChanges="orientation|keyboardHidden"
+           android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+           android:windowSoftInputMode="stateAlwaysHidden">
+           <intent-filter>
+              <action android:name="android.intent.action.MAIN"/>
+              <category android:name="android.intent.category.DEFAULT"/>
+           </intent-filter>
+           <intent-filter>
+              <action android:name="com.google.zxing.client.android.SCAN"/>
+              <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+    </activity>
+    <activity
+        android:label="@string/app_name"
+        android:name="br.fapema.morholt.android.QRCodeSampleActivity" >
+       <intent-filter >
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+    </activity>
+    
+    <meta-data android:name="com.google.android.gms.version"
+        	android:value="@integer/google_play_services_version" />
+    
+        
+        
+    </application>
+    
+    <instrumentation
+        android:targetPackage="br.fapema.morholt.android"
+        android:name="android.test.InstrumentationTestRunner" />
+</manifest>

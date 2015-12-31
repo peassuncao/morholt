@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+        android:descendantFocusability="blocksDescendants" >
+    
+    <TextView android:id="@+id/column1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+    
+    <TextView android:id="@+id/column2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+    
+    <TextView android:id="@+id/column3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        />
+
+    <ToggleButton
+        android:id="@+id/sendData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/send_button_selector"
+        android:textOff=""
+        android:textOn="" />
+    
+    <ToggleButton
+        android:id="@+id/sendPhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/send_button_selector"
+        android:textOff=""
+        android:textOn="" />
+    
+     <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/ic_delete_white_24dp"
+         />
+
+</LinearLayout>

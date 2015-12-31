@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WizardPageContainer" >
+
+			<TextView style="@style/WizardPageTitle" />
+			
+            <TextView 
+                style="@style/WizardPageComment"
+                
+                android:id="@+id/comment"/>
+
+</LinearLayout>

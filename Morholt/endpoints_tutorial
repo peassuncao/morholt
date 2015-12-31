@@ -1,0 +1,28 @@
+Para regerar endpoints:
+
+em arquiologiay
+deletar endpoint-libs
+
+em arqueologiay-AppEngine
+  br.fapema.morholt.android.coleta
+  salvar backup de NovaColetaEndpoint
+  deletar NovaColetaEndpoint
+  clicar com direita em NovaColeta: Google->generate
+  substituir gerado pelo bkp
+google->generate
+
+em arquiologiay
+endpoint-libs\libnovacoletaendpoint-v1\novacoletaendpoint\novacoletaendpoint-v1-generated-source
+clicar com direita  build path-> use as source
+  
+  Em Novacoletaendpoint  setar DEFAULT_ROOT_URL = "http://10.0.0.7:8888/_ah/api/"; não pode ser local host
+  
+para ver a base de dados acessar:
+
+http://localhost:8888/_ah/admin/
+
+firewall
+
+
+
+as classes usadas no endpoint como SimpleString, devem ter construtor sem arg

@@ -1,0 +1,8 @@
+/.apt_generated/
+bin/
+gen/
+libcompile/
+libs/
+libs-sources/
+endpoint-libs/
+endpoint-libs/lib-collectendpoint-v1/

@@ -1,0 +1,3 @@
+type;name;label;hint;constraint;constraint_message;required;appearance;default;relevant;read_only;calculation
+integer;np;Número Proveniência;Este número não pode se repetir nunca;;;true;;.=${barcodenp};;;
+photo;photo;FOTO;tire uma foto;;;false;;;;;

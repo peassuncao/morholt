@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity$DummySectionFragment"
+    android:id="@+id/layout_x" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/x" />
+
+    <EditText
+        android:id="@+id/textX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:imeOptions="flagNoExtractUi" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textX"
+        android:layout_marginTop="20dp"
+        android:text="@string/y" />
+
+    <EditText
+        android:id="@+id/textY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textX"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:imeOptions="flagNoExtractUi"/>
+
+    <TextView
+        android:id="@+id/textLoadingPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/obtaining_position"
+        android:selectAllOnFocus="true" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLoadingPosition"
+        android:layout_centerHorizontal="true"
+        android:checked="true"
+        android:textOff="@string/capital_off"
+        android:textOn="@string/capital_on" />
+
+    
+    
+    
+    
+   <TextView
+        android:id="@+id/textViewLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleButtonStop"
+        android:layout_marginTop="50dp"
+        android:text="@string/lat" />
+
+    <EditText
+        android:id="@+id/textLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewLat"
+        android:layout_alignBottom="@+id/textViewLat"
+        android:layout_toRightOf="@+id/textViewLong"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:imeOptions="flagNoExtractUi" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewLat"
+        android:layout_below="@+id/textLat"
+        android:layout_marginTop="20dp"
+        android:text="@string/longitude" />
+
+    <EditText
+        android:id="@+id/textLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewLong"
+        android:layout_alignBottom="@+id/textViewLong"
+        android:layout_toRightOf="@+id/textViewLong"
+        android:ems="10"
+        android:selectAllOnFocus="true"
+        android:imeOptions="flagNoExtractUi"/>
+    
+    
+    
+    
+    
+    
+    
+
+</RelativeLayout>

@@ -1,0 +1,89 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity$DummySectionFragment"
+    android:alpha="1"
+     >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/material" />
+
+      <RadioGroup
+        android:id="@+id/radioMaterial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        >
+        <RadioButton
+            android:id="@+id/radioMaterialCeramicoConstrutivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_ceramico_construtivo"
+            android:checked="true" 
+         />
+ 
+        <RadioButton
+            android:id="@+id/radioMaterialLouca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_louca" />
+        <RadioButton
+           android:id="@+id/radioMaterialMetal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_metal" />
+        <RadioButton
+            android:id="@+id/radioMaterialVidro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_vidro" />
+        <RadioButton
+            android:id="@+id/radioMaterialCeramica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_ceramica" />
+        <RadioButton
+            android:id="@+id/radioMaterialLitico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_litico" />
+        <RadioButton
+            android:id="@+id/radioMaterialFauna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_fauna" />
+        <RadioButton
+            android:id="@+id/radioMaterialOutro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_material_outro" />
+    </RadioGroup>
+
+      <EditText
+          android:id="@+id/textMaterialOutro"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/radioMaterial"
+          android:layout_below="@+id/radioMaterial"
+          android:ems="10" 
+          android:visibility="invisible"
+          android:inputType="textAutoComplete"
+          >
+
+          <requestFocus />
+      </EditText>
+
+</RelativeLayout>

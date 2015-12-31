@@ -1,0 +1,33 @@
+mvn eclipse:eclipse
+
+GWT SDK not installed
+ no eclipse tem que adicionar as libraries sdk de appengine e gwt.
+ em library, add library
+ reiniciar eclipse
+
+
+
+ 
+ no export, colocar elas pra topo
+ mudar o default output path(esperar erro)
+ 
+
+--maven
+--mvn appengine:devserver
+--mvn gwt:run-codeserver
+
+--abrir no browser 127.0.0.1:8080
+
+
+
+ 
+ 
+ pra fazer a ligacao com android, adicionar no app-engine
+ on the directory .settings the file com.google.gdt.eclipse.appengine.swarm.prefs
+ with:
+ 
+ connectedProject=Morholt
+eclipse.preferences.version=1
+
+
+no android tem que ter semelhante

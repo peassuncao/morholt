@@ -1,0 +1,16 @@
+# Google App Engine generated folder
+appengine-generated/
+.gwt/
+.settings/
+endpoint-libs/
+gwt-unitCache/
+target/
+war/arqueologia_appengine/
+war/WEB-INF/classes/**
+war/WEB-INF/lib/*/
+war/WEB-INF/deploy
+war/WEB-INF/appengine-generated/
+test-classes/
+
+
+

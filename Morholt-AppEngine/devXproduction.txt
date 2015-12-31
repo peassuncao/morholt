@@ -1,0 +1,15 @@
+Ponto de Entrada, mudar
+		MyServiceClientImpl myServiceClientImpl = new MyServiceClientImpl("http://localhost:8888/arqueologia_appengine/" + "myService");
+	//	MyServiceClientImpl myServiceClientImpl = new MyServiceClientImpl(GWT.getModuleBaseURL() + "myService"); 
+
+	Arqueologia_AppEngine.gwt.xml
+	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
+<set-property name="compiler.useSourceMaps" value="true" />
+
+dev:
+atualizar o run com ip tambem para  local
+rodar o Arqueologia_Appengine.jsp
+abrir chrome
+	
+	
+Em Novacoletaendpoint trocar default_ROOT_URL	

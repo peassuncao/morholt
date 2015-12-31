@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  
+
+ <modelVersion>4.0.0</modelVersion>
+  <groupId>Morholt-AppEngine</groupId>
+  <artifactId>Morholt-AppEngine</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Morholt-AppEngine</name>
+  
+  <properties>
+    <!-- Convenience property to set the GWT version -->
+    <gwtVersion>2.7.0</gwtVersion>
+
+    <!-- GWT needs at least java 1.6 -->
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+
+    <!-- GAE properties -->
+    <gae.version>1.9.21</gae.version>
+  
+    <gae.home>D:\code\lib\appengine-java-sdk-${gae.version}/</gae.home>
+    <gae.application.version>1</gae.application.version>
+
+    <!-- Don't let your Mac use a crazy non-standard encoding -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.gwt</groupId>
+        <artifactId>gwt</artifactId>
+        <version>${gwtVersion}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <!-- GWT -->
+
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-user</artifactId>
+      <!-- "provided" so that we don't deploy -->
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-dev</artifactId>
+      <!-- "provided" so that we don't deploy -->
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt</groupId>
+      <artifactId>gwt-codeserver</artifactId>
+      <!-- "provided" so that we don't deploy -->
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.web.bindery</groupId>
+      <artifactId>requestfactory-server</artifactId>
+    </dependency>
+    <!-- Need to run the RF Validation tool. This works on both the command-line
+         and in Eclipse, provided that m2e-apt is installed. -->
+    <dependency>
+      <groupId>com.google.web.bindery</groupId>
+      <artifactId>requestfactory-apt</artifactId>
+      <!-- "provided" so that we don't deploy -->
+      <scope>provided</scope>
+    </dependency>
+  
+  	<!--  image upload  https://code.google.com/p/gwtupload/wiki/GwtUpload_GettingStarted -->
+    
+    <dependency>
+      <groupId>com.googlecode.gwtupload</groupId>
+      <artifactId>gwtupload</artifactId>
+      <version>1.0.4-SNAPSHOT</version>
+    </dependency>
+    
+
+    <!-- RequestFactory will use JSR 303 javax.validation if you let it -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.1.0.Final</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.xml.bind</groupId>
+          <artifactId>jaxb-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.sun.xml.bind</groupId>
+          <artifactId>jaxb-impl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Required by Hibernate validator because slf4j-log4j is
+         optional in the hibernate-validator POM -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
+    <!-- Google App Engine (GAE) -->
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>${gae.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-testing</artifactId>
+      <version>${gae.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-stubs</artifactId>
+      <version>${gae.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-labs</artifactId>
+      <version>${gae.version}</version>
+    </dependency>
+    <dependency>
+	<groupId>com.google.appengine</groupId>
+		<artifactId>appengine-endpoints</artifactId>
+		<version>${gae.version}</version>
+	</dependency>
+	
+    <!--  MapReduce -->
+    <dependency>
+	    <groupId>com.google.appengine.tools</groupId>
+	    <artifactId>appengine-mapreduce</artifactId>
+	    <version>RELEASE</version>
+	</dependency>
+
+    <!-- Objectify for persistence. It uses the stock javax.persistence annotations -->
+
+    <dependency>
+      <groupId>com.googlecode.objectify</groupId>
+      <artifactId>objectify</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <!-- GIN and Guice for IoC / DI -->
+
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.gwt.inject</groupId>
+      <artifactId>gin</artifactId>
+      <version>2.1.2</version>
+    </dependency>
+    <!-- Use the JSR 330 injection interfaces-->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.3</version>
+	</dependency>
+    
+	
+	<!-- Maps -->
+
+	<dependency>
+	    <groupId>com.github.branflake2267</groupId>
+	    <artifactId>gwt-maps-api</artifactId>
+	    <version>3.10.0-alpha-7</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>com.github.branflake2267</groupId>
+	    <artifactId>gwt-maps-utility-markerclustererplus</artifactId>
+	    <version>3.10.0-alpha-7</version>
+	</dependency>
+
+
+	
+    <!-- Unit tests -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
+    <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+
+
+        
+        
+    <plugins>
+
+      <!-- GWT Maven Plugin-->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <version>${gwtVersion}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <!-- execution-->
+            <!-- Run tests through gwt:test, this allows reusing the plugin configuration for GWTTestCases -->
+            <!-- id>gwt-tests</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution-->
+        </executions>
+
+        <!-- Plugin configuration. There are many available options,
+             see gwt-maven-plugin documentation at codehaus.org -->
+        <configuration>
+        
+        <excludes>
+       <exclude>com.google.gwt:gwt-user</exclude>
+       <exclude>com.google.gwt:gwt-dev</exclude>
+       <exclude>org.scala-lang:scala-library</exclude>
+       <exclude>org.scala-lang:scala-compiler</exclude>
+     </excludes>
+     
+          <!-- URL that should be opened by DevMode (gwt:run). -->
+          <runTarget>gwt_hosting.jsp</runTarget>
+          <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
+          <compileReport>false</compileReport>
+          <compilerMetrics>false</compilerMetrics>
+          
+          
+                    
+          <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+          <modules>
+            <module>br.fapema.morholt.Arqueologia_AppEngine</module>
+          </modules>
+          <appEngineVersion>${gae.version}</appEngineVersion>
+          <appEngineHome>${gae.home}</appEngineHome>
+          <logLevel>INFO</logLevel>
+          <style>${gwt.style}</style>
+
+          <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
+          <copyWebapp>false</copyWebapp>
+          <webappDirectory>war/WEB-INF/classes</webappDirectory>
+
+        <useCache>false</useCache>
+        
+          <!-- Run tests using HtmlUnit -->
+          <!-- mode>htmlunit</mode -->
+          <!-- Tests patterns -->
+          <!-- includes>**/Test*.java,**/*Test.java,**/*TestCase.java</includes-->
+         </configuration>
+      </plugin>
+
+      <!-- Google App Engine plugin -->
+
+      <!-- Skip normal test execution, we use gwt:test instead -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.17</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      
+       
+        <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.9.21</version>
+        </plugin>
+
+    </plugins>
+
+    <!-- Required by m2e for import into eclipse. No effect on command line builds  -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+        </plugin>
+        
+        <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.9.21</version>
+                
+            <executions>
+                <execution>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>endpoints_get_discovery_doc</goal>
+                        <goal>endpoints_get_client_lib</goal>
+                    </goals>
+                </execution>
+            </executions>
+            
+                <configuration>
+                    <enableJarClasses>false</enableJarClasses>
+                    <!-- Comment in the below snippet to bind to all IPs instead of just localhost -->
+                    <address>127.0.0.1</address>
+                    <port>8888</port>
+                    <!-- Comment in the below snippet to enable local debugging with a remove debugger
+                         like those included with Eclipse or IntelliJ -->
+                    <!-- jvmFlags>
+                      <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
+                    </jvmFlags -->
+                </configuration>
+            </plugin>
+            
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <repositories>
+  
+  <repository>
+    <id>central</id>
+    <name>Maven Repository Switchboard</name>
+    <layout>default</layout>
+    <url>http://repo1.maven.org/maven2</url>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  
+    <repository>
+      <id>objectify-appengine</id>
+      <url>http://objectify-appengine.googlecode.com/svn/maven</url>
+    </repository>
+    <repository>
+      <id>google-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    
+    
+    <repository>
+      <id>sonatype-snapshots</id>
+      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+    
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codehaus-snapshots</id>
+      <url>https://nexus.codehaus.org/content/groups/snapshots-group/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+      <id>google-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+</project>

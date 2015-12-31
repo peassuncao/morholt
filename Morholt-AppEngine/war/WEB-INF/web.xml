@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  
+    
+    
+   <context-param>
+    <param-name>maxSize</param-name>
+    <param-value>2096000</param-value>
+    <!-- <param-value>1024000</param-value> -->
+  </context-param>
+
+  <context-param>
+    <param-name>corsDomainsRegex</param-name>
+    <param-value>.*</param-value>
+  </context-param>
+     
+ <servlet>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+  <init-param>
+   <param-name>services</param-name>
+   <param-value>br.fapema.morholt.collect.CollectEndpoint</param-value>
+  </init-param>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>SystemServiceServlet</servlet-name>
+  <url-pattern>/_ah/spi/*</url-pattern>
+ </servlet-mapping>
+
+ 
+ <servlet>
+  <servlet-name>mapreduce</servlet-name>
+  <servlet-class>
+    com.google.appengine.tools.mapreduce.MapReduceServlet
+  </servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>mapreduce</servlet-name>
+  <url-pattern>/mapreduce/*</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>pipeline</servlet-name>
+  <servlet-class>
+    com.google.appengine.tools.pipeline.impl.servlets.PipelineServlet
+  </servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>pipeline</servlet-name>
+  <url-pattern>/_ah/pipeline/*</url-pattern>
+</servlet-mapping>
+
+ 
+ <!-- Mapper -->
+ <servlet>
+        <servlet-name>SuccessfulUploadCSV</servlet-name>
+        <servlet-class>br.fapema.morholt.web.server.SuccessfulUploadCSVServlet</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>SuccessfulUploadCSV</servlet-name>
+        <url-pattern>/uploadcsv-success</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+		<servlet-name>UploadCSV</servlet-name>
+		<servlet-class>br.fapema.morholt.web.server.UploadCSVServlet</servlet-class>
+	</servlet>
+	
+     <servlet-mapping>
+        <servlet-name>UploadCSV</servlet-name>
+        <url-pattern>/uploadcsv</url-pattern>
+    </servlet-mapping>
+<!-- end Mapper -->       
+ 
+ 
+ 
+   <servlet>
+  <servlet-name>MyUpload</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.UploadServlet</servlet-class>
+ </servlet>
+ 
+  <servlet>
+  <servlet-name>MyUpload</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.UploadServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>MyUpload</servlet-name>
+  <url-pattern>/myUploadURL</url-pattern>
+ </servlet-mapping>
+
+ 
+ <servlet>
+    <servlet-name>blobStore</servlet-name>
+    <servlet-class> br.fapema.morholt.web.server.MyBlobstoreUploadAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>blobStore</servlet-name>
+    <url-pattern>*.blobstore</url-pattern>
+  </servlet-mapping>
+
+  
+
+<servlet-mapping>
+    <servlet-name>blobStore</servlet-name>
+    <url-pattern>/sendImage</url-pattern>
+</servlet-mapping>
+ 
+ 
+  <servlet>
+  <servlet-name>Uploada</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.Upload</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>Uploada</servlet-name>
+  <url-pattern>/uploada</url-pattern>
+ </servlet-mapping>
+ 
+   <servlet>
+  <servlet-name>ImageUploadServlet</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.ImageUploadServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>ImageUploadServlet</servlet-name>
+  <url-pattern>/webImageUpload</url-pattern>
+ </servlet-mapping>
+ 
+ 
+   <servlet>
+  <servlet-name>Serve</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.Serve</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>Serve</servlet-name>
+  <url-pattern>/serve</url-pattern>
+ </servlet-mapping>
+ 
+  <servlet>
+  <servlet-name>Download</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.DownloadServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>Download</servlet-name>
+  <url-pattern>/csv</url-pattern>
+ </servlet-mapping>
+ 
+ 
+ <servlet>
+  <servlet-name>MyService</servlet-name>
+  <servlet-class>br.fapema.morholt.web.server.MyServiceImpl</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>MyService</servlet-name>
+  <url-pattern>/arqueologia_appengine/myService</url-pattern>
+ </servlet-mapping>
+ 
+ 
+   <!-- Default page to serve -->
+  <welcome-file-list>
+    <!--  welcome-file>Arqueologia_AppEngine.html</welcome-file -->
+    <welcome-file>gwt_hosting.jsp</welcome-file>
+  </welcome-file-list>
+
+  
+</web-app>

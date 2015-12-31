@@ -1,0 +1,5 @@
+ai vai
+inicializar com admin,
+criar template
+criar usuario e profile
+criar profile anonymous

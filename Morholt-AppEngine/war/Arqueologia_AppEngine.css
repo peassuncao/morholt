@@ -1,0 +1,338 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 3px 0px 3px;
+  text-align: center;
+}
+
+.titleLabel {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FFFFFF;
+	
+}
+
+.gwt-Anchor:link {color:#FFFFFF; white-space: pre}
+.gwt-Anchor:visited {color:#FFFFFF; white-space: pre}
+.gwt-Anchor:hover {color:#ffff51; white-space: pre}
+.gwt-Anchor:active {color:#0000FF; white-space: pre}
+
+.labelHeader {
+  font-size: 1em;
+  font-weight: bold;
+  color: #777777;
+  margin: 3px 0px 3px;
+  text-align: center;
+}
+
+.sendButton {
+  display: block;
+  font-size: 16pt;
+}
+
+
+.dialogVPanel {
+  margin: 0px;
+}
+
+.serverResponseLabelError {
+  color: #ffff1c;
+}
+
+/** Set ids using widget.getElement().setId("idOfElement") */
+#closeButton {
+  margin: 15px 6px 6px;
+}
+
+.rootPanel {
+	background-color: #ffff1c;
+}
+.somePanel {
+    background-color: #ffff1c;
+    border-color: #ffff1c;
+}
+.vertPanel {
+    background-color: #FFFFFF;
+}
+
+.mainPanel {
+    background-color: #0080c0;
+}
+
+.gridViewPanel {
+	background-color: #ffff1c;
+	 padding: 0px; 
+}
+
+
+.dataGridList {
+    background-color: #ffff1c;
+}
+
+.dataGridPager {
+    background-color: #0080c0;
+}
+
+.cw-FlexTable td {
+  border: 1px #BBBBBB;
+  padding: 3px;
+}
+
+.cw-FlexTable-buttonPanel td {
+  border: 0px;
+}
+
+
+
+
+.detailPanel {
+	background-color: #f3f7fb;
+	border-color: blue;
+	padding: 1px;
+}
+
+.enterPanel {
+	background-color: #ffff1c;
+	padding: 0px;
+    border-color: green;
+    border: 0px;
+    
+}
+
+.mapLegendTable {
+border: 1px solid #c5d7ef;
+border-collapse: collapse;
+width: 100%;
+margin-bottom: 0;
+}
+
+.flowPanelButtons {
+	padding: 1x;
+	background-color: #ffff1c;
+}
+
+.tabPanel {
+	background-color: #ffff1c;
+	user-select: none;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	padding: 0px;
+    margin: 0px;
+}
+
+.enterContent {
+	background-color: #ffff1c;
+	user-select: none;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+	padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+
+
+.gridDockPanel {
+	background-color: #ffff1c;  
+	border-style: solid;
+	border-color: #ffff1c;
+	padding: 0px;
+}
+
+.gwt-ScrollPanel {
+	background-color: #008040;
+	padding: 0px;
+}
+
+.marginLeft1 {
+	margin-left: 1em;
+}
+
+.marginRight1 {
+	margin-right: 1em;
+}
+
+.paddingLeft1 {
+	padding-left: 1em;
+}
+
+.paddingTopBotton {
+	padding-top : .5em;
+	padding-bottom : .5em;
+}
+
+.paddingTop {
+	padding-top : .5em;
+}
+
+.child {
+  position: absolute; left:1em; top:1em; right:1em; bottom:1em;
+}
+
+.toast{
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	width: 100px;
+	margin-left: -100px;
+	border: 1px solid #666;
+	background-color: #B1BCCF;
+	padding: 10px 0 ;
+	text-align:center;
+	opacity: .9;
+	 
+	/*The good stuff */
+	-webkit-transition: opacity 0.5s ease-out; /* Saf3.2+, Chrome */
+	-moz-transition: opacity 0.5s ease-out; /* FF4+ */
+	-ms-transition: opacity 0.5s ease-out; /* IE10? */
+	-o-transition: opacity 0.5s ease-out; /* Opera 10.5+ */
+	transition: opacity 0.5s ease-out;
+}
+
+.mapView {
+	background-color: #FFFFFF;
+	border: 50px;
+}
+
+
+.gwt-TabLayoutPanel {
+	user-select: none;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs {
+	user-select: none;
+	
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelContent {
+	user-select: none;
+	
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  border-color: #e6e7e8;
+  border-style: solid;
+  border-width: 3px 2px 2px;
+  overflow: hidden;
+  padding: 0px;
+  background: #FFFFFF; 
+} 
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab {
+	
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  margin-left: 0px;
+  padding: 3px 8px 3px 8px;
+  cursor: pointer;
+  cursor: hand;
+  color: black;
+  font-size: 1.1em;
+  color: #2dbbff;
+  text-align: center;
+  background: #0080c0;
+  
+	user-select: none;
+} 
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab-selected {
+	
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  cursor: default;
+  background: #2dbbff; 
+  font-size: 1.1em;
+  color: #FFFFFF;
+  	user-select: none;
+}
+
+.gwt-DialogBox {
+  border: 2px outset;
+  background-color: white;
+}
+
+.gwt-DialogBox .dialogTopLeftInner {
+  width: 10px;
+  height: 8px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogTopRightInner {
+  width: 12px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomLeftInner {
+  width: 10px;
+  height: 12px;
+  zoom: 1;
+}
+
+.gwt-DialogBox .dialogBottomRightInner {
+  width: 12px;
+  height: 12px;
+  zoom: 1;
+}
+
+
+
+html>body .gwt-DialogBox {
+}
+
+* html .gwt-DialogBox .dialogTopLeftInner {
+  width: 10px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogTopRightInner {
+  width: 12px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  width: 10px;
+  height: 12px;
+  overflow: hidden;
+}
+
+* html .gwt-DialogBox .dialogBottomRightInner {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.googleMapsWidget > div {
+    height: 100vh;
+}

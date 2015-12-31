@@ -1,0 +1,1 @@
+https://code.google.com/p/gwt-datepicker/downloads/detail?name=gwt-datepicker-r30.jar   lgpl

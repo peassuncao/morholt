@@ -1,0 +1,2 @@
+the first thing to be done by the admin user is to create a template.
+then reload the site on the web, then he can create a collection.

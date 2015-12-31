@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="C:/app/gwt-2.7.0/gwt-user.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/gwt-2.7.0/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/app/gwt-2.7.0/gwt-codeserver.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/gwt-2.7.0/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/app/gwt-2.7.0/gwt-dev.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/gwt-2.7.0/doc/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/appengine-local-runtime-shared.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/el-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp/repackaged-appengine-ant-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp/repackaged-appengine-ant-launcher-1.7.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp/repackaged-appengine-jasper-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp/repackaged-appengine-jasper-el-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp/repackaged-appengine-tomcat-juli-6.0.29.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/jsp-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/shared/servlet-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/appengine-tools-api.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/appengine-api-labs/v1/appengine-api-labs.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/appengine-endpoints/v1/appengine-endpoints-deps.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/appengine-endpoints/v1/appengine-endpoints.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/jsr107/v1/jsr107cache-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/user/appengine-api-1.0-sdk-1.9.21.jar" sourcepath="C:/app/appengine-java-sdk-1.9.21/src/user/appengine-api-1.0-sdk-1.9.21-src.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/asm-4.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/datanucleus-api-jdo-3.1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/datanucleus-api-jpa-3.1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/datanucleus-appengine-2.1.2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/datanucleus-core-3.1.3.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/geronimo-jpa_2.0_spec-1.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/jdo-api-3.0.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/appengine-java-sdk-1.9.21/lib/opt/user/datanucleus/v2/jta-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/app/appengine-java-sdk-1.9.21/docs/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/app/gwt-2.7.0/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="C:/app/gwt-2.7.0/validation-api-1.0.0.GA.jar" sourcepath="C:/app/gwt-2.7.0/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
+	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar" sourcepath="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/jdo/jdo2-api/2.3-eb/jdo2-api-2.3-eb.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/transaction/transaction-api/1.1/transaction-api-1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/inject/javax.inject/1/javax.inject-1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/gwt/gwt-user/2.7.0/gwt-user-2.7.0.jar" sourcepath="M2_REPO/com/google/gwt/gwt-user/2.7.0/gwt-user-2.7.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/gwt/gwt-dev/2.7.0/gwt-dev-2.7.0.jar" sourcepath="M2_REPO/com/google/gwt/gwt-dev/2.7.0/gwt-dev-2.7.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar" sourcepath="M2_REPO/org/ow2/asm/asm/5.0.3/asm-5.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3.jar" sourcepath="M2_REPO/org/ow2/asm/asm-util/5.0.3/asm-util-5.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar" sourcepath="M2_REPO/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar" sourcepath="M2_REPO/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/gwt/gwt-codeserver/2.7.0/gwt-codeserver-2.7.0.jar" sourcepath="M2_REPO/com/google/gwt/gwt-codeserver/2.7.0/gwt-codeserver-2.7.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/web/bindery/requestfactory-server/2.7.0/requestfactory-server-2.7.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/web/bindery/requestfactory-apt/2.7.0/requestfactory-apt-2.7.0.jar"/>
+	<classpathentry kind="src" path="/gwtupload"/>
+	<classpathentry kind="var" path="M2_REPO/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1.jar" sourcepath="M2_REPO/commons-fileupload/commons-fileupload/1.3.1/commons-fileupload-1.3.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.3/commons-io-2.3.jar" sourcepath="M2_REPO/commons-io/commons-io/2.3/commons-io-2.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/hibernate-validator/4.1.0.Final/hibernate-validator-4.1.0.Final.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16.jar" sourcepath="M2_REPO/log4j/log4j/1.2.16/log4j-1.2.16-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/appengine-api-1.0-sdk/1.9.21/appengine-api-1.0-sdk-1.9.21.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/appengine-testing/1.9.21/appengine-testing-1.9.21.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/appengine-api-stubs/1.9.21/appengine-api-stubs-1.9.21.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/appengine-api-labs/1.9.21/appengine-api-labs-1.9.21.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/appengine-endpoints/1.9.21/appengine-endpoints-1.9.21.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/tools/appengine-mapreduce/0.8.5/appengine-mapreduce-0.8.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/tools/appengine-gcs-client/0.5/appengine-gcs-client-0.5.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/guava/guava/19.0-rc2/guava-19.0-rc2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/apis/google-api-services-storage/v1-rev15-1.19.0/google-api-services-storage-v1-rev15-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client/1.19.0/google-api-client-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client/1.20.0/google-oauth-client-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client/1.19.0/google-http-client-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.3/commons-codec-1.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jackson2/1.19.0/google-http-client-jackson2-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client-appengine/1.20.0/google-api-client-appengine-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client-appengine/1.20.0/google-oauth-client-appengine-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-appengine/1.19.0/google-http-client-appengine-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client-servlet/1.20.0/google-oauth-client-servlet-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jdo/1.20.0/google-http-client-jdo-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client-servlet/1.20.0/google-api-client-servlet-1.20.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/appengine/tools/appengine-pipeline/0.2.13/appengine-pipeline-0.2.13.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/json/json/20090211/json-20090211.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/googlecode/charts4j/charts4j/1.3/charts4j-1.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/protobuf/protobuf-java/2.6.0/protobuf-java-2.6.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/it/unimi/dsi/fastutil/6.5.16/fastutil-6.5.16.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/apis/google-api-services-bigquery/v2-rev154-1.19.0/google-api-services-bigquery-v2-rev154-1.19.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.6.3/jackson-databind-2.6.3.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.6.0/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/easymock/easymock/3.0/easymock-3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/cglib/cglib-nodep/2.2/cglib-nodep-2.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/objenesis/objenesis/1.2/objenesis-1.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/googlecode/objectify/objectify/3.0/objectify-3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/inject/guice/3.0/guice-3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/gwt/inject/gin/2.1.2/gin-2.1.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/inject/extensions/guice-assistedinject/3.0/guice-assistedinject-3.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/branflake2267/gwt-maps-api/3.10.0-alpha-7/gwt-maps-api-3.10.0-alpha-7.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/google/gwt/google-apis/gwt-ajaxloader/1.1.0/gwt-ajaxloader-1.1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.11/junit-4.11.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/github/branflake2267/gwt-maps-utility-markerclustererplus/3.10.0-alpha-7/gwt-maps-utility-markerclustererplus-3.10.0-alpha-7.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/mapreduce"/>
+	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwtupload-1.0.4-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="lib" path="war/WEB-INF/lib/gwtupload-gae-1.0.4-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

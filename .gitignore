@@ -1,2 +1,12 @@
 # Google App Engine generated folder
-appengine-generated/
+Morholt-AppEngine/appengine-generated/
+Morholt-AppEngine/.gwt/
+Morholt-AppEngine/.settings/
+Morholt-AppEngine/endpoint-libs/
+Morholt-AppEngine/gwt-unitCache/
+Morholt-AppEngine/target/
+Morholt-AppEngine/war/arqueologia_appengine/
+Morholt-AppEngine/war/WEB-INF/classes/
+
+
+Morholt-AppEngine/war/arqueologia_appengine/52157FA758B4F4B80519B1F1FBE434DA.cache.js

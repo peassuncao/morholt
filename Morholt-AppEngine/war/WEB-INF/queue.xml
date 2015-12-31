@@ -1,0 +1,13 @@
+<queue-entries>
+  <total-storage-limit>1000M</total-storage-limit>
+  <queue>
+    <name>default</name>
+    <rate>100/s</rate>
+  </queue>
+  
+  <queue>
+    <name>mapreducecsv-workers</name>
+    <rate>100/s</rate>
+  </queue>
+  
+</queue-entries>

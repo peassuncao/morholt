@@ -1,0 +1,17 @@
+<!-- AboutView.ui.xml -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+ 
+  <g:HTMLPanel>
+     <p>Esse sistema foi desenvolvido para acomodoar a coleção do Sítio do Físico pela <a href="http://www.fapema.br/" target="_blank">FAPEMA.</a></p>
+     <p>Foi criado em parceria com a empresa Brandi &amp; Bandeira, com o apoio direto de Rafael Brandi e Arkley Bandeira.</p>
+     <p>Implementado pelo Analista de Sistemas, <a target="_blank" href="http://pedroassuncaodevasconcellos.blogspot.com.br/">Pedro Assunção de Vasconcellos</a>.</p>
+     
+     <p>Esse sistema pode, com alguma adaptação, ser usado para outras coleções. Ele está disponível em código aberto em: </p>
+  </g:HTMLPanel>
+    
+  
+
+</ui:UiBinder>

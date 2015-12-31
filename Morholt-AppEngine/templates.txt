@@ -1,0 +1,35 @@
+type;name;label;required;relevant;appearance;hint;filterBy
+geopoint;geopoint;geopoint;true;;;;false
+date;data;data;true;;;;false
+text;NP;NP;true;;;;true
+select_one etapas;etapa;etapa;true;;;;false
+text;aoa;aoa;true;;;;true
+select_one tipo_intervencao;tipo_intervencao;tipo de intervenção;true;;;;false
+text;nome_intervencao;nome da intervenção;true;;;;false
+text;profundidade;profundidade;true;;;;false
+select_one materiais;material;material;true;;;;true
+decimal;qtde;qtde;true;;;;false
+text;coletor;coletor;false;;;;false
+text;zona;zona;true;;;;false
+image;foto;foto;true;;;;false
+select_one desmembrado;desmembrado;desmembrado;false;;;;false
+text;NP_original;NP original;false;;;;false
+select_one analisado;analisado;analisado;false;;;;false
+text;local_reserva;local na reserva;false;;;;false
+text;local_estante;local na estante;false;;;;true
+text;local_prateleira;local na prateleira;false;;;;false
+text;processo_iphan;processo do iphan;false;;;;false
+date;data_curodoria;data da curodoria;false;;;;true
+text;observacoes;observacoes;true;;;;false
+
+
+
+
+
+--values--
+
+etapa:diagnóstico;prospecção;monitoramento;resgate;acompanhamento;avaliação de potencial;avaliação de impacto
+tipo_intervencao:coleta de superfície;coleta de perfil;poço-teste;sondagem;coleta em área impactada;unidade de escavação;doação;não consta na lista acima
+material:cerâmico;lítico;cerâmico cosntrutivo;louça;vidro;metal;ósseo;malacológico;carvão;sedimento;vegetal (resina);sem separação;não consta na lista acima
+desmembrado:sim;não
+analisado:sim;não

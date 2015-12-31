@@ -1,0 +1,37 @@
+<!-- AboutView.ui.xml -->
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+ 
+  <g:HTMLPanel>
+     <p>O Sítio do Físico</p>
+     <p>O Instituto do Ecomuseu do Sítio do Físico foi fundado em 24 de junho de
+2006, sendo constituído como uma Organização da Sociedade Civil de Interesse
+Público – OSCIP, sem fins lucrativos.
+O acervo arqueológico desta instituição é composto por coleções de natureza
+arqueológica oriunda de pesquisas científicas e doações de materiais orgânicos e
+inorgânicos, de distintas matérias-primas.</p>
+<p>Em sete anos de existência, o Instituto do Ecomuseu Sítio do Físico - IESF1
+,
+desde sua gênese, vem focando sua reflexão e atuação no desenvolvimento de
+parcerias e fomento de atividades que busquem a promoção da cidadania, defesa do
+meio ambiente e do patrimônio cultural, bem como o estímulo à participação
+comunitária para preservação e socialização do patrimônio cultural e arqueológico do
+Parque Estadual do Bacanga e adjacências, no município de São Luís – MA.
+O Ecomuseu Sítio do Físico surgiu da iniciativa de colaboradores e parceiros
+dos Sr. Fernando e Sra. Nery Mendonça, proprietários da área onde se encontram as
+ruínas do Sítio do Físico e o Sambaqui do Bacanga, que atuando na perspectiva do
+voluntariado social, vem desenvolvendo ações sociais e ambientais sem fins
+lucrativos.
+Visando a formalização dessas ações foi criada em 24 de junho de 2006 a
+Organização da Sociedade Civil de Interesse Público – OSCIP – denominada de
+Instituto do Ecomuseu Sítio do Físico-IESF, substituindo a antiga Associação dos
+Amigos do Ecomuseu Sítio do Físico – AAESF</p>
+<p><!--a  target="_blank" href="http://projetoarqueologia.blogspot.com">Blog do Sítio</a--></p>
+     
+     </g:HTMLPanel>
+    
+  
+
+</ui:UiBinder>

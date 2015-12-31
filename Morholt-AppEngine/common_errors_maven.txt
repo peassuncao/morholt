@@ -1,0 +1,2 @@
+The App Engine SDK 'C:\Users\bhola\.m2\..\appengine-api-1.0-sdk-1.9.23.jar' on the project's build path is not valid (SDK location 'C:\Users\bhola\.m2\repository\com\google\appengine\appengine-api-1.0-sdk\1.9.23\appengine-api-1.0-sdk-1.9.23.jar' is not a directory)	Copy of Monir-AppEngine		Unknown	Google App Engine Problem
+solucao: no build path, export, colocar os m2_repo no botton

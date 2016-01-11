@@ -34,7 +34,7 @@
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com" ],
       "clientIds" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com", "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com", "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com" ],
-      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.insertMyContentValues",
+      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.insertMyContentValues", 
       "request" : {
         "parameters" : {
           "table" : {

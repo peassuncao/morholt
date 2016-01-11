@@ -36,17 +36,18 @@ import br.fapema.morholt.web.shared.MyFilterPredicate;
 import br.fapema.morholt.web.shared.MyFilterPredicate.MyFilterOperator;
 import br.fapema.morholt.web.shared.exception.MyQuotaException;
 
-@Api(name = "collectendpoint", clientIds = {CollectEndpoint.WEB_CLIENT_ID, CollectEndpoint.ANDROID_CLIENT_ID}, 
+@Api(name = "collectendpoint", clientIds = {CollectEndpoint.WEB_CLIENT_ID, CollectEndpoint.ANDROID_CLIENT_ID, CollectEndpoint.ANDROID_CLIENT_TEST_ID}, 
      namespace = @ApiNamespace(ownerDomain = "morholt.fapema.br", ownerName = "morholt.fapema.br", packagePath = "collect"),
      audiences = {CollectEndpoint.ANDROID_AUDIENCE}
 )
 public class CollectEndpoint implements Serializable{
 	
-	  public static final String WEB_CLIENT_ID = "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com";
+	  public static final String WEB_CLIENT_ID = "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com";
 	                                                  
 	  // FIXME PRODUCTION this ANDROID_CLIENT_ID is generated from the SHA1 of a debug key, do it for real for production
-	//  public static final String ANDROID_CLIENT_ID = "727728054183-u292na7rieh3d99avfdke5t7jt4u1pfp.apps.googleusercontent.com"; //FIXME local server
-	  public static final String ANDROID_CLIENT_ID = "727728054183-0hmadh01jt56m6h2bnq0vm18iigmct79.apps.googleusercontent.com"; //FIXME server
+	  public static final String ANDROID_CLIENT_TEST_ID = "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com"; //FIXME local server
+	  
+	  public static final String ANDROID_CLIENT_ID = "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com"; //FIXME server
 	  public static final String ANDROID_AUDIENCE = WEB_CLIENT_ID;
 
 	  public static final String EMAIL_SCOPE = "https://www.googleapis.com/auth/userinfo.email";

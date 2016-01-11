@@ -27,64 +27,13 @@
   "ownerName" : "morholt.fapema.br",
   "packagePath" : "collect",
   "methods" : {
-    "collectendpoint.getBlobURL" : {
-      "path" : "bloburl",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com" ],
-      "clientIds" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com", "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com", "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com" ],
-      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getBlobURL",
-      "request" : {
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "collectendpoint.getURLBlobWeb" : {
-      "path" : "bloburl/{path}",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com" ],
-      "clientIds" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com", "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com", "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com" ],
-      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getURLBlobWeb",
-      "request" : {
-        "parameters" : {
-          "path" : {
-            "type" : "string",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
-    "collectendpoint.getProjetInfo" : {
-      "path" : "getProjetInfo",
-      "httpMethod" : "GET",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com" ],
-      "clientIds" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com", "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com", "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com" ],
-      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getProjectInfo",
-      "request" : {
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "collectendpoint.insertMyContentValues" : {
       "path" : "simplestring/{table}/{keys}",
       "httpMethod" : "POST",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com" ],
-      "clientIds" : [ "802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com", "802459644262-iibvsfkt07n7dsd3sfv6b7u9ss3sgg3m.apps.googleusercontent.com", "802459644262-4h0kotdopf12rj50lmiv60mgg2erlkvc.apps.googleusercontent.com" ],
+      "audiences" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com" ],
+      "clientIds" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com", "727728054183-0hmadh01jt56m6h2bnq0vm18iigmct79.apps.googleusercontent.com" ],
       "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.insertMyContentValues",
       "request" : {
         "parameters" : {
@@ -103,15 +52,70 @@
       "response" : {
         "body" : "autoTemplate(backendResponse)"
       }
+    },
+    "collectendpoint.getProjetInfo" : {
+      "path" : "getProjetInfo",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com" ],
+      "clientIds" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com", "727728054183-0hmadh01jt56m6h2bnq0vm18iigmct79.apps.googleusercontent.com" ],
+      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getProjectInfo",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "collectendpoint.getURLBlobWeb" : {
+      "path" : "bloburl/{path}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com" ],
+      "clientIds" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com", "727728054183-0hmadh01jt56m6h2bnq0vm18iigmct79.apps.googleusercontent.com" ],
+      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getURLBlobWeb",
+      "request" : {
+        "parameters" : {
+          "path" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "collectendpoint.getBlobURL" : {
+      "path" : "bloburl",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com" ],
+      "clientIds" : [ "727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com", "727728054183-0hmadh01jt56m6h2bnq0vm18iigmct79.apps.googleusercontent.com" ],
+      "rosyMethod" : "br.fapema.morholt.collect.CollectEndpoint.getBlobURL",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
     }
   },
   "descriptor" : {
     "schemas" : {
-      "BlobURL" : {
-        "id" : "BlobURL",
+      "JsonMap" : {
+        "id" : "JsonMap",
+        "type" : "object"
+      },
+      "SimpleString" : {
+        "id" : "SimpleString",
         "type" : "object",
         "properties" : {
-          "url" : {
+          "string" : {
             "type" : "string"
           }
         }
@@ -140,29 +144,23 @@
           }
         }
       },
-      "JsonMap" : {
-        "id" : "JsonMap",
-        "type" : "object"
-      },
-      "SimpleString" : {
-        "id" : "SimpleString",
+      "BlobURL" : {
+        "id" : "BlobURL",
         "type" : "object",
         "properties" : {
-          "string" : {
+          "url" : {
             "type" : "string"
           }
         }
       }
     },
     "methods" : {
-      "br.fapema.morholt.collect.CollectEndpoint.getBlobURL" : {
+      "br.fapema.morholt.collect.CollectEndpoint.insertMyContentValues" : {
+        "request" : {
+          "$ref" : "JsonMap"
+        },
         "response" : {
-          "$ref" : "BlobURL"
-        }
-      },
-      "br.fapema.morholt.collect.CollectEndpoint.getURLBlobWeb" : {
-        "response" : {
-          "$ref" : "BlobURL"
+          "$ref" : "SimpleString"
         }
       },
       "br.fapema.morholt.collect.CollectEndpoint.getProjectInfo" : {
@@ -170,12 +168,14 @@
           "$ref" : "Model"
         }
       },
-      "br.fapema.morholt.collect.CollectEndpoint.insertMyContentValues" : {
-        "request" : {
-          "$ref" : "JsonMap"
-        },
+      "br.fapema.morholt.collect.CollectEndpoint.getURLBlobWeb" : {
         "response" : {
-          "$ref" : "SimpleString"
+          "$ref" : "BlobURL"
+        }
+      },
+      "br.fapema.morholt.collect.CollectEndpoint.getBlobURL" : {
+        "response" : {
+          "$ref" : "BlobURL"
         }
       }
     }

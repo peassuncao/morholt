@@ -424,7 +424,7 @@ public class FilterHelper {
 		flexTable.getFlexCellFormatter().setColSpan(row, 0, 2);
 		row++;
 
-		dataSources.add(new DataSource(DataSourceTypeEnum.Text, "cidade", "cidade", false, false, true)); // TODO fixed data
+	//FIXME cidade	dataSources.add(new DataSource(DataSourceTypeEnum.Text, "cidade", "cidade", false, false, true)); // TODO fixed data
 		dropBox.addItem("");
 		
 		for (DataSource dataSource : dataSources) {
@@ -492,8 +492,6 @@ public class FilterHelper {
 						flexTable.getFlexCellFormatter().setColSpan(changeRow, 0, 2);
 						break;
 						
-					default:
-						Window.alert("type:" + dataSource.getType()); //FIXME remove
 				}
 			}
 

@@ -160,7 +160,7 @@ public class SettingsActivity extends Activity implements OnClickListener{
 			catch (GoogleAuthIOException ge) {
 				ge.printStackTrace();
 				Log.e("SettingsActivity", "authentication error on endpoint: " + ge.getMessage());
-				return "falha no autenticação do usuário";
+				return "falha na autenticação do usuário";
 			}
 			catch (IOException e) { 
 				e.printStackTrace();

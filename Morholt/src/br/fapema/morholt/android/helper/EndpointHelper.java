@@ -27,12 +27,13 @@ public class EndpointHelper {
 		if(!isOnline(context)) {
 			throw new NotOnlineException();
 		}
-//		if(!isConnectedToServer(Collectendpoint.DEFAULT_ROOT_URL, SERVER_TIMEOUT)) {
-//			throw new ServerUnavailableException();
-//		}
+	//	if(!isConnectedToServer(Collectendpoint.DEFAULT_ROOT_URL, SERVER_TIMEOUT)) {
+	//		throw new ServerUnavailableException(); //FIXME
+	//	}
 		
-		final GoogleAccountCredential credential = GoogleAccountCredential.usingAudience(context,
-			    "server:client_id:727728054183-g5347dt4o2k2klemra0f8mn5c7r4pnps.apps.googleusercontent.com");
+		  final GoogleAccountCredential credential = GoogleAccountCredential.usingAudience(context,
+				    "server:client_id:802459644262-gpgb0o87k161qvtclsudcvf4mfb7h99s.apps.googleusercontent.com"); //FIXME credential
+		  
 		
 		SharedPreferences settings = context.getSharedPreferences(
 			    "SharedPreferences", 0);
@@ -64,8 +65,9 @@ public class EndpointHelper {
 	}
 
 	public static boolean isConnectedToServer(String url, int timeout) throws ServerUnavailableException {
+		url="http://192.168.229.2:8888/";
 		try {
-			URL myUrl = new URL(url);
+			URL myUrl = new URL(url.replace("/_ah/api/", ""));
 			URLConnection connection = myUrl.openConnection();
 			connection.setConnectTimeout(timeout);
 			connection.connect();

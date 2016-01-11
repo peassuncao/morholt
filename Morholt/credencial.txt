@@ -1,7 +1,9 @@
 wnindows->pref->android->build
 
-https://console.developers.google.com/project/projetoarqueologia/apiui/credential#
+https://console.developers.google.com/project/ositiodofisico/apiui/credential#
 
 CollectEndpoint.ANDROID_CLIENT_ID
 
-atualizar endpoint do android
+atualizar endpoint do android - tem que regerar com o comando do google a biblioteca
+
+atutalizar clientId em CollectEndpoint e EndpointHelper

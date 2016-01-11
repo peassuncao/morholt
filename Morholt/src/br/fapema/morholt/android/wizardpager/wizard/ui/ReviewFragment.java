@@ -251,7 +251,7 @@ public class ReviewFragment extends MyListFragment implements PageInterface, OnC
 		
 		if(v.getId() == R.id.buttonSendPhoto) {
 			isReadyPhoto(false);
-			new PhotoSendEndpointTask(new PhotoEndpointCallback(), null, MyApplication.getRootContentValues()).execute(getActivity());
+			new PhotoSendEndpointTask(getActivity(), new PhotoEndpointCallback(), null, MyApplication.getRootContentValues()).execute(getActivity());
 		}
 		else if(v.getId() == R.id.buttonNew) {
 			((BaseActivity)getActivity()).openInitialActivity();
@@ -279,7 +279,7 @@ public class ReviewFragment extends MyListFragment implements PageInterface, OnC
 				Toast.makeText(getActivity(), "não foi possível enviar, este usuário não está alocado neste projeto", Toast.LENGTH_SHORT).show();
 			}
 			else if (result.result == SendEndpointTask.RESULT_ERROR_AUTHENTICATION) {
-				Toast.makeText(getActivity(), "não foi possível enviar, falha no autenticação do usuário", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity(), "não foi possível enviar, falha na autenticação do usuário", Toast.LENGTH_SHORT).show();
 			}
 			else if (result.result == SendEndpointTask.RESULT_ERROR_NOT_ONLINE) {
 				Toast.makeText(getActivity(), "não foi possível enviar, sem acesso à internet", Toast.LENGTH_SHORT).show();
@@ -335,7 +335,7 @@ public class ReviewFragment extends MyListFragment implements PageInterface, OnC
 			Toast.makeText(getActivity(), "não foi possível enviar, este usuário não está alocado neste projeto", Toast.LENGTH_SHORT).show();
 		}
 		else if (result.result == SendEndpointTask.RESULT_ERROR_AUTHENTICATION) {
-			Toast.makeText(getActivity(), "não foi possível enviar, falha no autenticação do usuário", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getActivity(), "não foi possível enviar, falha na autenticação do usuário", Toast.LENGTH_SHORT).show();
 		}
 		else if (result.result == SendEndpointTask.RESULT_ERROR_NOT_ONLINE) {
 			Toast.makeText(getActivity(), "não foi possível enviar, sem acesso à internet", Toast.LENGTH_SHORT).show();

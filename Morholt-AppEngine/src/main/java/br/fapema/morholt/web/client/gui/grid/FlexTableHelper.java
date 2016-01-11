@@ -540,9 +540,6 @@ public class FlexTableHelper {
 	            {
 	                ((DateBox)nextWidget).setEnabled(false);
 	            }
-	            else {
-	            	Window.alert(nextWidget.getClass().getName());
-	            }
 	            	
 	        }
 	    }

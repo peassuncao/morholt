@@ -33,7 +33,6 @@ public class ListView extends Composite implements HasText {
 
 	@UiHandler("button")
 	void onClick(ClickEvent e) {
-		Window.alert("Hello!");
 	}
 
 	public void setText(String text) {

@@ -171,7 +171,7 @@ public class LoadListAdapter extends BaseAdapter implements EndpointCallback, Li
 				Toast.makeText(activity, "não foi possível enviar, este usuário não está alocado neste projeto", Toast.LENGTH_SHORT).show();
 			}
 			else if (result.result == SendEndpointTask.RESULT_ERROR_AUTHENTICATION) {
-				Toast.makeText(activity, "não foi possível enviar, falha no autenticação do usuário", Toast.LENGTH_SHORT).show();
+				Toast.makeText(activity, "não foi possível enviar, falha na autenticação do usuário", Toast.LENGTH_SHORT).show();
 			}
 			else if (result.result == SendEndpointTask.RESULT_ERROR_NOT_ONLINE) {
 				Toast.makeText(activity, "não foi possível enviar, sem acesso à internet", Toast.LENGTH_SHORT).show();
@@ -201,7 +201,7 @@ public class LoadListAdapter extends BaseAdapter implements EndpointCallback, Li
 		public void onClick(View v) {
 			if(loadListValuesCollection.get(position).getColumnPhotoSentToServer()== false && ((ToggleButton) v).isEnabled()) {
 				((ToggleButton) v).setEnabled(false);
-				new PhotoSendEndpointTask(new PhotoEndpointCallback(), position, loadListValuesCollection.get(position)).execute(activity);
+				new PhotoSendEndpointTask(context, new PhotoEndpointCallback(), position, loadListValuesCollection.get(position)).execute(activity);
 			}
 		}
 		
@@ -223,7 +223,7 @@ public class LoadListAdapter extends BaseAdapter implements EndpointCallback, Li
 						Toast.makeText(activity, "não foi possível enviar, este usuário não está alocado neste projeto", Toast.LENGTH_SHORT).show();
 					}
 					else if (result.result == SendEndpointTask.RESULT_ERROR_AUTHENTICATION) {
-						Toast.makeText(activity, "não foi possível enviar a foto, falha no autenticação do usuário", Toast.LENGTH_SHORT).show();
+						Toast.makeText(activity, "não foi possível enviar a foto, falha na autenticação do usuário", Toast.LENGTH_SHORT).show();
 					}
 					else if (result.result == SendEndpointTask.RESULT_ERROR_NOT_ONLINE) {
 						Toast.makeText(activity, "não foi possível enviar a foto, sem acesso à internet", Toast.LENGTH_SHORT).show();

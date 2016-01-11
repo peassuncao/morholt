@@ -27,11 +27,15 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import br.fapema.morholt.android.CloudEndpointUtils;
 import br.fapema.morholt.android.MyApplication;
+import br.fapema.morholt.android.exception.NotOnlineException;
+import br.fapema.morholt.android.exception.ServerUnavailableException;
+import br.fapema.morholt.android.helper.EndpointHelper;
 import br.fapema.morholt.collect.collectendpoint.Collectendpoint;
 import br.fapema.morholt.collect.collectendpoint.model.BlobURL;
 import br.fapema.morholt.android.wizardpager.wizard.basic.Values;
@@ -43,16 +47,18 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 	private EndpointCallback endpointCallback;
 	private Integer listPosition;
 	private Values values;
+	private Context context;
 	
 	/**
 	 * @param photoEndpointCallback
 	 * @param listPosition
 	 * @param values
 	 */
-	public PhotoSendEndpointTask(EndpointCallback photoEndpointCallback, Integer listPosition, Values values) {
+	public PhotoSendEndpointTask(Context context, EndpointCallback photoEndpointCallback, Integer listPosition, Values values) {
 		this.endpointCallback = photoEndpointCallback;
 		this.listPosition = listPosition;
 		this.values = values;
+		this.context = context;
 	}
 
 	protected Long doInBackground(Context... contexts) {
@@ -61,10 +67,10 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 		
 		Collectendpoint.Builder endpointBuilder = new Collectendpoint.Builder(
 				AndroidHttp.newCompatibleTransport(), new com.google.api.client.json.jackson2.JacksonFactory(), credential);
-		Collectendpoint endpoint = CloudEndpointUtils.updateBuilder(
-				endpointBuilder).build();
-		Log.i(this.getClass().getSimpleName(), "Endpoint: " + endpoint.getRootUrl());
 		try {
+			Collectendpoint endpoint = EndpointHelper.obtainEndpoint(context);
+			Log.i(this.getClass().getSimpleName(), "Endpoint: " + endpoint.getRootUrl());
+		
 			 
 		    BlobURL blobURL = endpoint.getBlobURL().execute();
 			String url = blobURL.getUrl();
@@ -90,6 +96,12 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 			e.printStackTrace();
 			Log.e("ReviewFragment", "GetURLEndpointsTask, error2 on endpoint: " + e.getMessage());
 			return (long) 1;
+		} catch (NotOnlineException e1) {
+			Log.e("ReviewFragment", "GetURLEndpointsTask, notOnlineException on endpoint: " + e1.getMessage());
+			return (long) SendEndpointTask.RESULT_ERROR_NOT_ONLINE;
+		} catch (ServerUnavailableException e1) {
+			Log.e("ReviewFragment", "GetURLEndpointsTask, ServerUnavailableException on endpoint: " + e1.getMessage());
+			return (long) SendEndpointTask.RESULT_ERROR_SERVER_UNAVAILABLE;
 		}
 		Log.i("PhotoSendEndpointTask", "doInBackground end"); 
 		return (long) 0;

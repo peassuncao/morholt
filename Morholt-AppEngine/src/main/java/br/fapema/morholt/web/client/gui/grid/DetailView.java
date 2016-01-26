@@ -42,8 +42,10 @@ public class DetailView extends Composite  {
 	private Map<String, List<Model>> mapKindToSmallTables;
 	private Profile profile;
 	private MyServiceClientImpl myService;
-
-	public DetailView(Model selectedModel, List<DataSource> dataSources, BackCallback backCallback, Composite enterView, int numberOfDetailsColumns, Map<String, List<Model>> mapKindToSmallTables, Profile profile, MyServiceClientImpl myService) {
+	private int width;
+	
+	public DetailView(int width, Model selectedModel, List<DataSource> dataSources, BackCallback backCallback, Composite enterView, int numberOfDetailsColumns, Map<String, List<Model>> mapKindToSmallTables, Profile profile, MyServiceClientImpl myService) {
+		this.width = width;
 		this.profile = profile;
 		this.backCallback = backCallback;
 		this.enterView = enterView;
@@ -53,11 +55,12 @@ public class DetailView extends Composite  {
 		this.myService = myService;
 		detailModel = selectedModel;
 		initWidget(aPanel);
-
+		setWidth(width+"px");
 		aPanel.addStyleName("detailPanel");
 	
 		showDetails();
 	}
+	
 	
 	private void showDetails() {
 		aPanel.clear();
@@ -69,7 +72,7 @@ public class DetailView extends Composite  {
 		aPanel.addNorth(header, 3);
 		aPanel.addSouth(backButton, 3);
 		
-		FlexTable flexTable = FlexTableHelper.createTable("Detalhes", detailModel, dataSources, numberOfDetailsColumns, FlexTableEnum.Detail, mapKindToSmallTables, profile, myService);
+		FlexTable flexTable = FlexTableHelper.createTable(width, "Detalhes", detailModel, dataSources, numberOfDetailsColumns, FlexTableEnum.Detail, mapKindToSmallTables, profile, myService);
 		FlexTableHelper.disableAllChildren(flexTable);
 		aPanel.add(new ScrollPanel(flexTable));
 	}

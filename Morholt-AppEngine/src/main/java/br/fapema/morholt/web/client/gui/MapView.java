@@ -55,15 +55,15 @@ public class MapView extends Composite implements AuxiliarInterface{
 	private ArrayList<LatLng> points;
 	private Panel refinedSearchAuxiliarWidget;
 	private MyServiceClientImpl myService;
-	
+	private int width;
 	
 	private static int additionalZindex = 1000;
 	public MapView(List<Model> models, final List<DataSource> dataSources,
 			int width, int height, MyServiceClientImpl myService) {
 		DockLayoutPanel panel = new DockLayoutPanel(Unit.EM);
-		
 		initWidget(panel);
 		this.myService = myService;
+		this.width = width;
 		
 		addStyleDependentName("mapView");
 		log.info("starting MapView");
@@ -195,7 +195,7 @@ public class MapView extends Composite implements AuxiliarInterface{
 					return;
 				}
 
-				final FlexTable table = FlexTableHelper.createTable("xxx",
+				final FlexTable table = FlexTableHelper.createTable(width, "xxx",
 						model, dataSources, 2, FlexTableEnum.Detail, null, null, myService);
 				FlexTableHelper.disableAllChildren(table);
 				HorizontalPanel hp = new HorizontalPanel();

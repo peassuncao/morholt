@@ -33,6 +33,7 @@ public class SendEndpointTask extends AsyncTask<Context, Integer, TaskResult> {
 	public static final int RESULT_ERROR_NOT_ONLINE = 3;
 	public static final int RESULT_ERROR_IO = 1;
 	public static final int RESULT_ERROR_AUTHENTICATION = 2;
+	public static final int RESULT_ERROR_TIMEOUT = 7;
 	private Activity activity;
 	private EndpointCallback endpointCallback;
 	private MyApplication myApplication;

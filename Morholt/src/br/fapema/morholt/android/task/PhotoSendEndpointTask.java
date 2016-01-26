@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.net.SocketTimeoutException;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
@@ -65,33 +66,44 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 		Log.i("PhotoSendEndpointTask", "doInBackground start"); 
 		GoogleAccountCredential credential = MyApplication.getCredential();
 		
+		
+		
+		Collectendpoint.Builder endpointBuilder2 = new Collectendpoint.Builder(
+				AndroidHttp.newCompatibleTransport(), new com.google.api.client.json.jackson2.JacksonFactory(), credential);
+		Collectendpoint endpoint2 = CloudEndpointUtils.updateBuilder(
+				endpointBuilder2).build();
+		Log.i(this.getClass().getSimpleName(), "Endpoint2: " + endpoint2.getRootUrl());
+		
+		
+		
+		
 		Collectendpoint.Builder endpointBuilder = new Collectendpoint.Builder(
 				AndroidHttp.newCompatibleTransport(), new com.google.api.client.json.jackson2.JacksonFactory(), credential);
 		try {
 			Collectendpoint endpoint = EndpointHelper.obtainEndpoint(context);
 			Log.i(this.getClass().getSimpleName(), "Endpoint: " + endpoint.getRootUrl());
-		
-			 
 		    BlobURL blobURL = endpoint.getBlobURL().execute();
 			String url = blobURL.getUrl();
 			if(url.contains("brandi-i7:8888"))  // FIXME local hostname 
 				url = url.replace("brandi-i7:8888",  Collectendpoint.LOCAL_DEFAULT_IP); 
-			try {
+			
+			Log.i(this.getClass().getSimpleName(), "Photo Url: " + url);
+			
 				Map<String, File> files = new HashMap<String, File>();
 				List<String> fileNames = getCameraColumnNames();
 				for (String fileName : fileNames) {
 					final File file = new File(getPhotoUrl(fileName));  
 					files.put(fileName, file);
 				}
-				
-				
-				String x = postFile(url, files);
-			} catch (Exception e) {
-				e.printStackTrace();
-				Log.e("ReviewFragment", "GetURLEndpointsTask, error on endpoint: " + e.getMessage());
-				return (long) 1;
-			} 
-		} catch (IOException e) {
+				// TODO this is not working with local server
+				postFile(url, files);
+		} 
+		catch(SocketTimeoutException e) {
+			e.printStackTrace();
+			Log.e("ReviewFragment", "GetURLEndpointsTask, timeout: " + e.getMessage());
+			return (long) SendEndpointTask.RESULT_ERROR_TIMEOUT;
+		}
+		catch (IOException e) {
 			
 			e.printStackTrace();
 			Log.e("ReviewFragment", "GetURLEndpointsTask, error2 on endpoint: " + e.getMessage());
@@ -103,8 +115,13 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 			Log.e("ReviewFragment", "GetURLEndpointsTask, ServerUnavailableException on endpoint: " + e1.getMessage());
 			return (long) SendEndpointTask.RESULT_ERROR_SERVER_UNAVAILABLE;
 		}
+		catch (Exception e) {
+			e.printStackTrace();
+			Log.e("ReviewFragment", "GetURLEndpointsTask, error on endpoint: " + e.getMessage());
+			return (long) 1;
+		} 
 		Log.i("PhotoSendEndpointTask", "doInBackground end"); 
-		return (long) 0;
+		return (long) SendEndpointTask.RESULT_OK;
 	}
 	
 	@Override
@@ -121,137 +138,16 @@ public class PhotoSendEndpointTask extends AsyncTask<Context, Integer, Long> {
 	private List<String> getCameraColumnNames() {
 		return MyApplication.pagelist.obtainColumnNameFromPages(CameraPage.class);
 	}
-	
-
 	   
-	public String postFile(String url, Map<String, File> files) throws Exception {
-		
+	public void postFile(String url, Map<String, File> files) throws Exception {
 		String key = values.getAsString("key"); 
 		MultipartUtility multipartUtility = new MultipartUtility(url, "UTF-8");
+		multipartUtility.addFormField("sometestkey", "sometestvalue");
 		  for (String fileName : files.keySet()) {
 		//   	builder.addBinaryBody(key+SEPARA + fileName, files.get(fileName), ContentType.create("image/jpeg"), key+SEPARA + fileName);    
-			
 		  
 		multipartUtility.addFilePart(key+SEPARA + fileName, files.get(fileName));
 		  }
-		  List<String> response = multipartUtility.finish();
-		
-		
-	/* FIXME desde que mudei pra ultima versao do android sdk	
-	    HttpClient client = new DefaultHttpClient();
-	    HttpPost post = new HttpPost(url);
-	    
-	    MultipartEntityBuilder builder = MultipartEntityBuilder.create();        
-	    builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
-
-	    for (String fileName : files.keySet()) {
-	    	builder.addBinaryBody(key+SEPARA + fileName, files.get(fileName), ContentType.create("image/jpeg"), key+SEPARA + fileName);    
-		}
-	    
-	    final HttpEntity yourEntity = builder.build();
-
-	    class ProgressiveEntity implements HttpEntity {
-	        @Override
-	        public void consumeContent() throws IOException {
-	            yourEntity.consumeContent();                
-	        }
-	        @Override
-	        public InputStream getContent() throws IOException,
-	                IllegalStateException {
-	            return yourEntity.getContent();
-	        }
-	        @Override
-	        public Header getContentEncoding() {             
-	            return yourEntity.getContentEncoding();
-	        }
-	        @Override
-	        public long getContentLength() {
-	            return yourEntity.getContentLength();
-	        }
-	        @Override
-	        public Header getContentType() {
-	            return yourEntity.getContentType();
-	        }
-	        @Override
-	        public boolean isChunked() {             
-	            return yourEntity.isChunked();
-	        }
-	        @Override
-	        public boolean isRepeatable() {
-	            return yourEntity.isRepeatable();
-	        }
-	        @Override
-	        public boolean isStreaming() {             
-	            return yourEntity.isStreaming();
-	        } 
-
-	        @Override
-	        public void writeTo(OutputStream outstream) throws IOException {
-
-	            class ProxyOutputStream extends FilterOutputStream {
-	            
-	            */
-	                /**
-	                 * @author Stephen Colebourne
-	                 */
-
-		/*FIXME desque mudou versao do android
-	                public ProxyOutputStream(OutputStream proxy) {
-	                    super(proxy);    
-	                }
-	                public void write(int idx) throws IOException {
-	                    out.write(idx);
-	                }
-	                public void write(byte[] bts) throws IOException {
-	                    out.write(bts);
-	                }
-	                public void write(byte[] bts, int st, int end) throws IOException {
-	                    out.write(bts, st, end);
-	                }
-	                public void flush() throws IOException {
-	                    out.flush();
-	                }
-	                public void close() throws IOException {
-	                    out.close();
-	                }
-	            } // CONSIDER import this class (and risk more Jar File Hell)
-
-	            class ProgressiveOutputStream extends ProxyOutputStream {
-	                public ProgressiveOutputStream(OutputStream proxy) {
-	                    super(proxy);
-	                }
-	                public void write(byte[] bts, int st, int end) throws IOException {
-
-	                    out.write(bts, st, end);
-	                }
-	            }
-
-	            yourEntity.writeTo(new ProgressiveOutputStream(outstream));
-	        }
-
-	    };
-	    ProgressiveEntity myEntity = new ProgressiveEntity();
-
-	    post.setEntity(myEntity);
-	    org.apache.http.HttpResponse response = client.execute(post);        
-
-	    return getContent(response);
-*/
-		return null;
+		multipartUtility.finish();
 	} 
-
-	/* FIXME desde que mudou android
-	public static String getContent(org.apache.http.HttpResponse response) throws IOException {
-	    BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-	    String body = "";
-	    String content = "";
-
-	    while ((body = rd.readLine()) != null) 
-	    {
-	        content += body + "\n";
-	    }
-	    return content.trim();
-	}
-	*/
-	
 }

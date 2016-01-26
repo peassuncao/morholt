@@ -73,6 +73,7 @@
  
  
  
+ <!--  Photo upload -->
    <servlet>
   <servlet-name>MyUpload</servlet-name>
   <servlet-class>br.fapema.morholt.web.server.UploadServlet</servlet-class>

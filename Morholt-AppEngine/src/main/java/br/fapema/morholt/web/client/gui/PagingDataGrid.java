@@ -81,13 +81,13 @@ public abstract class PagingDataGrid<T> extends Composite {
         dataGrid = new DataGrid<T>(20, DataGridResource.INSTANCE, keyProvider);
         simpleLayoutPanel.add(dataGrid);
         dataGrid.setWidth("100%");
-        dataGrid.setStylePrimaryName("dataGridList"); 
+        dataGrid.addStyleName("dataGridList"); 
         
         MySimplePager.Resources pagerResources = GWT.create(MySimplePager.Resources.class);
         pager = new MySimplePager(TextLocation.CENTER, pagerResources, false, 0,
                 true);
         pager.setDisplay(dataGrid);
-        pager.setStylePrimaryName("dataGridPager");
+        pager.addStyleName("dataGridPager");
         dataProvider = new ListDataProvider<T>();
         dataList = new ArrayList<T>(); 
         dataProvider.setList(dataList);

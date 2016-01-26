@@ -9,6 +9,7 @@
   <!-- Inherit the core Web Toolkit stuff.       -->
   <inherits name='com.google.gwt.user.User'/>
  <inherits name="com.google.gwt.logging.Logging"/>   
+ <inherits name="br.com.freller.tool.PrintIt"/>   
  
 
   <inherits name="gwtupload.GWTUpload"/>

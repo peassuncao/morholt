@@ -62,6 +62,9 @@ h1 {
 
 .mainPanel {
     background-color: #0080c0;
+	 padding: 1px; 
+	 border: 0px;
+	 margin: 0px;
 }
 
 .gridViewPanel {
@@ -79,16 +82,55 @@ h1 {
 }
 
 .cw-FlexTable td {
-  border: 1px #BBBBBB;
-  padding: 3px;
+  border: 0px #BBBBBB;
+  padding: 1px;
+  margin: 0px;
+}
+
+.table {
+  padding: 1px;
+  margin: 0px;
 }
 
 .cw-FlexTable-buttonPanel td {
   border: 0px;
 }
 
+.flexTableText {
+  max-width: 1000px;  
+  min-width: 10%; 
+  width: 100%;
+}
 
 
+.flexTableCellFormatterLabel {
+	 padding: 0px; 
+	 border: 1px;
+	 margin: 0px;
+ 	 text-align: left;
+  	 box-sizing: border-box;
+  	 max-width: 25%;  
+  	 min-width: 1%;  
+}
+
+.flexTableCellFormatterText {
+	 padding: 0px; 
+	 border: 0px;
+	 margin: 0px;
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 1000px;  
+  min-width: 30%;  
+  width: 30%;
+}
+
+.flexTableLabelColumnFormatter {
+  width: 15%; 
+}
+
+.flexTableValueColumnFormatter {
+  width: 35%; 
+}
 
 .detailPanel {
 	background-color: #f3f7fb;
@@ -126,6 +168,7 @@ margin-bottom: 0;
     -ms-user-select: none;
 	padding: 0px;
     margin: 0px;
+    border: 0px;
 }
 
 .enterContent {
@@ -205,6 +248,9 @@ margin-bottom: 0;
 	border: 50px;
 }
 
+.gwt-Label {
+            padding: 1px;
+}
 
 .gwt-TabLayoutPanel {
 	user-select: none;
@@ -238,7 +284,7 @@ margin-bottom: 0;
     -ms-user-select: none;
   border-color: #e6e7e8;
   border-style: solid;
-  border-width: 3px 2px 2px;
+  border-width:  0px;
   overflow: hidden;
   padding: 0px;
   background: #FFFFFF; 
@@ -335,4 +381,122 @@ html>body .gwt-DialogBox {
 
 .googleMapsWidget > div {
     height: 100vh;
+}
+
+
+ 
+
+
+@media print { 
+ /* All your print styles go here */
+ nav, footer, video, audio, object, embed { display: none !important; }
+ * {
+ background:transparent !important;
+color:#000 !important;
+text-shadow:none !important;
+filter:none !important;
+-ms-filter:none !important;
+ font-size: 10pt;
+ }
+ 
+ @page {
+ 	size: "100%";
+    margin: 0mm;
+            border: solid 0px black ;
+            padding: 0px;
+ }
+  body 
+  {
+            background-color:#FFFFFF; 
+            border: solid 0px black ;
+            margin: 0px;  /* the margin on the content before printing */
+            padding: 0px;
+  }
+  
+  
+  #ad{ display:none;}
+  #leftbar{ display:none;}
+  #contentarea{ width:100%;}
+  
+ tr {
+ max-width: 1000px;
+ }
+  
+ th, td {
+    border: 0px solid black;
+	margin: 0px;
+    min-width: 10%;  
+}
+
+.myLabel {
+ padding: 1px;
+  max-width: 1000px; 
+}
+
+/**
+for zebra like printers choose continuous mode on printer (no need, and not possible i think to break pages)
+*/
+.FlexTable-Row {
+ page-break-inside: avoid;
+ background-color:blue; 
+}
+
+.FlexTable {
+  border-top: 0px solid #000000;
+  border-left: 0px solid #000000;
+  border-right: 0px solid #000000;
+  border-bottom: 0px solid #000000;
+  background-color:  #FFFFFF;
+  width: 100%;
+    box-sizing: border-box;
+    border-spacing: 0px;
+    border-collapse: collapse;
+     table-layout: fixed;
+  min-width: 1%;  
+}
+
+.flexTableLabel {
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 0px solid #000000;
+  border-bottom: 1px solid #000000;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 25%;  
+  min-width: 1%;  
+}
+
+.flexTableText {
+  border-top: 1px solid #000000;
+  border-left: 0px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  margin: 0;
+  padding: 0;
+  padding-right: 3%; 
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 1000px;  
+  min-width: 30%;  
+  overflow-wrap: break-word;
+  page-break-inside: avoid;
+}
+
+.flexTableLabelColumnFormatter {
+  max-width: 1000px; 
+  width: 1%; 
+}
+
+.flexTableValueColumnFormatter {
+  max-width: 1000px; 
+  width: 1%; 
+}
+
+
+.dialogVPanel {
+  margin: 0px;
+  border: 0px;
+}
 }

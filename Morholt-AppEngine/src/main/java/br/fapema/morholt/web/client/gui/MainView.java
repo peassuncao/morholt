@@ -67,7 +67,8 @@ public class MainView extends Composite implements AsyncCallback {
 	private Dictionary loginInfo;
 	private VerticalPanel westAuxiliarPanel;
 	private TabLayoutPanel tabLayoutPanel;
-
+	private int eastWidth;
+	
 	public MainView(Dictionary loginInfo, MyServiceClientImpl myService,
 			Map<String, List<DataSource>> mapCollectTemplateToDatasources, List<Model> templateModels) {
 		this.myService = myService;
@@ -78,16 +79,16 @@ public class MainView extends Composite implements AsyncCallback {
 		this.loginInfo = loginInfo;
 
 		initWidget(basePanel);
-
+		
 		basePanel.setWidth("100%");
 		basePanel.setHeight("100%");
-		basePanel.setStylePrimaryName("mainPanel");
+		basePanel.addStyleName("mainPanel");
 
-		basePanel.addWest(createWestPanel(), 18);
+		basePanel.addWest(createWestPanel(), 18);            
 		basePanel.addNorth((Widget) new MainViewNorthPanel(), 17);
+		eastWidth = Window.getClientWidth()*82/100;
 		basePanel.add(createTabLayout(myService));
 
-		
 
 	}
 
@@ -121,15 +122,19 @@ public class MainView extends Composite implements AsyncCallback {
 
 	private TabLayoutPanel createTabLayout(MyServiceClientImpl myService) {
 		tabLayoutPanel = new TabLayoutPanel(2, Unit.EM);
-		tabLayoutPanel.addStyleDependentName("tabPanel");
+		tabLayoutPanel.addStyleName("tabPanel");
+	
 		tabLayoutPanel.setHeight("100%");
-		tabLayoutPanel.setWidth("100%");
-
+		
+		
+		tabLayoutPanel.setWidth(Window.getClientWidth()*82/100 + "px");   
+	//	tabLayoutPanel.setWidth("100%"); FIXME have to change CreateView.. and others xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+		
 		gridViewProjects = createGridViewProject(myService);
 		tabLayoutPanel.add(gridViewProjects, "Coleções");
 
 		if (getProfile().authenticate(USERS.kind, Profile.CRUDEL.LIST)) {
-			gridViewUsers = new GridView(USERS.kind, USERS.key, Ajax.call(new UserCallBack(), "users callback"),
+			gridViewUsers = new GridView(eastWidth, USERS.kind, USERS.key, Ajax.call(new UserCallBack(), "users callback"),
 					myService, DataSourceDefaults.obtainDataSourcesUsers(), null, 100, 2, null, mapKindToSmallTables, null); // TODO
 																														// last
 																														// arg
@@ -139,7 +144,7 @@ public class MainView extends Composite implements AsyncCallback {
 		}
 
 		if (getProfile().authenticate(PROFILE.kind, Profile.CRUDEL.LIST) ) {
-			gridViewProfiles = new GridView(PROFILE.kind, PROFILE.key,
+			gridViewProfiles = new GridView(eastWidth, PROFILE.kind, PROFILE.key,
 					Ajax.call(new ProfileCallBack(), "profile callback"), myService,
 					DataSourceDefaults.obtainDataSourcesProfiles(), null, 100, 1, new ProfileCallAfterEdition(),
 					mapKindToSmallTables, null);
@@ -153,7 +158,7 @@ public class MainView extends Composite implements AsyncCallback {
 
 		if (getProfile().authenticate(TEMPLATE_ANDROID.kind, Profile.CRUDEL.LIST)
 				&& getProfile().authenticate(TEMPLATE_ANDROID.kind, Profile.CRUDEL.READ)) {
-			gridViewAndroidTemplate = new GridView(TEMPLATE_ANDROID.kind, TEMPLATE_ANDROID.key,
+			gridViewAndroidTemplate = new GridView(eastWidth, TEMPLATE_ANDROID.kind, TEMPLATE_ANDROID.key,
 					Ajax.call(new AndroidTemplateCallBack(), "android template callback"), myService,
 					DataSourceDefaults.obtainDataSourcesAndroidTemplate(), null, 100, 1, null, mapKindToSmallTables, null); // TODO
 																														// last
@@ -209,9 +214,9 @@ public class MainView extends Composite implements AsyncCallback {
 
 				List<DataSource> dataSources = mapTemplateNameToDatasources.get(collectTemplate);
 				// dataSources.add(createFeatureDataSource());
-				GridView collectGrid = new GridView(COLLECT.kind, null, null, myService, dataSources, null, 100, 2,
+				
+				GridView collectGrid = new GridView(eastWidth, COLLECT.kind, null, null, myService, dataSources, null, 100, 2,
 						null, mapKindToSmallTables, "project", true);
-				collectGrid.setWidth("100%");
 				collectGrid.setHeight("100%");
 				collectGrid.setRefinedSearchAuxiliar(westAuxiliarPanel, true);
 				collectTemplateWidgets.put(collectTemplate, collectGrid);
@@ -231,9 +236,11 @@ public class MainView extends Composite implements AsyncCallback {
 		EnterContent enterContent = new EnterContent(myService, new EnterTypes(EnterType.Grid), "NP", "enterKind",
 				tabWidgets, collectTemplateWidgets, "project_name", "Coleção");
 
-		GridView gridViewProjects = new GridView(PROJECT.kind, PROJECT.key, this, myService,
+		GridView gridViewProjects = new GridView(eastWidth, PROJECT.kind, PROJECT.key, this, myService,
 				DataSourceDefaults.obtainDataSourcesProject(), enterContent, 100, 2, null, mapKindToSmallTables, null);
+		gridViewProjects.setWidth(Window.getClientWidth()*82/100  + "px");
 
+		
 		gridViewProjects.setRefinedSearchAuxiliarWidget(westAuxiliarPanel);
 		mapKindToGrid.put("gridKind", gridViewProjects);
 

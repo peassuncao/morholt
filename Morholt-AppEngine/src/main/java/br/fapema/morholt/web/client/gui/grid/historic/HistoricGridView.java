@@ -71,7 +71,7 @@ public class HistoricGridView extends Composite implements AuxiliarInterface {
     	DataGridResource.INSTANCE.dataGridStyle().ensureInjected();
 
         dataGrid = new DataGrid<Model>(20, DataGridResource.INSTANCE, null);
-        dataGrid.setStylePrimaryName("dataGridList"); 
+        dataGrid.addStyleName("dataGridList"); 
         
         dataProvider = new ListDataProvider<Model>();
         dataList = new ArrayList<Model>(); 

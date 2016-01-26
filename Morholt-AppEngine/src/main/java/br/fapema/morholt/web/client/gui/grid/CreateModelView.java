@@ -52,10 +52,10 @@ public class CreateModelView extends Composite  implements AsyncCallback<SimpleS
 	private Profile profile;
 	
 	private String projectName;
+	private int width;
 	
 	
-	
-	public CreateModelView(String kind, String keyColumn, String ancestor, List<DataSource> dataSources, List<Model> models, MyServiceClientImpl myService, BackCallback backCallback, Map<String, List<Model>> mapKindToSmallTables, Model enterSelectedModel, Profile profile) {
+	public CreateModelView(int width, String kind, String keyColumn, String ancestor, List<DataSource> dataSources, List<Model> models, MyServiceClientImpl myService, BackCallback backCallback, Map<String, List<Model>> mapKindToSmallTables, Model enterSelectedModel, Profile profile) {
 		this.profile = profile;
 		this.backCallback = backCallback;
 		this.dataSources = dataSources;
@@ -64,11 +64,12 @@ public class CreateModelView extends Composite  implements AsyncCallback<SimpleS
 		this.keyColumn = keyColumn;
 		this.mapKindToSmallTables = mapKindToSmallTables;
 		this.models = models;
+		this.width = width;
 		
 		myClientInterface = myService;
 		initWidget(aPanel);
 
-		aPanel.setWidth("100%");
+		aPanel.setWidth(width+"px");
 		aPanel.addStyleName("detailPanel");
 
 		aPanel.addNorth(new HTMLPanel ("h1", "Novo"), 3);
@@ -82,7 +83,7 @@ public class CreateModelView extends Composite  implements AsyncCallback<SimpleS
 			newModel.put("state",  enterSelectedModel.get("state")); //should be a variable  "project_name"
 		}
 		
-		table = FlexTableHelper.createTable("Novo", newModel, dataSources, NUMBER_OF_COLUMNS, FlexTableEnum.New, mapKindToSmallTables, profile, myService);
+		table = FlexTableHelper.createTable(width, "Novo", newModel, dataSources, NUMBER_OF_COLUMNS, FlexTableEnum.New, mapKindToSmallTables, profile, myService);
 		
 		aPanel.add(new ScrollPanel(table));
 	}
@@ -107,7 +108,7 @@ public class CreateModelView extends Composite  implements AsyncCallback<SimpleS
 		if(projectName != null) {
 			newModel.put("project_name", projectName); //should be a variable  "project_name"
 		}
-		FlexTableHelper.addDataToTable(newModel, dataSources, NUMBER_OF_COLUMNS, FlexTableEnum.New, table, mapKindToSmallTables, profile, myClientInterface);
+		FlexTableHelper.addDataToTable(newModel, dataSources, NUMBER_OF_COLUMNS, FlexTableEnum.New, table, mapKindToSmallTables, profile, myClientInterface, width);
 	}
 	
 	private class SaveButtonClickHandler implements ClickHandler{

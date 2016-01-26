@@ -64,6 +64,12 @@ a {
   </head>
   <body>
   
+<iframe id="__printingFrame" style="width:0;height:0;border:0"></iframe>  
+<%---   
+<iframe id="printIT"   frameborder="0"  class="print" >
+</iframe>
+--%>  
+  
 <%
    } else {
 %>

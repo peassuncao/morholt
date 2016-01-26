@@ -29,7 +29,7 @@ public class EnterView extends Composite  {
 		this.enterContent = enterContent;
 		this.selectedKeyValue = selectedKeyValue;
 		initWidget(aPanel);
-		aPanel.setStyleName("enterPanel");
+		aPanel.addStyleName("enterPanel");
 		Label header = new Label (selectedKeyValue);
 		header.addStyleName("labelHeader");
 		backButton = new Button("Voltar");

@@ -10,6 +10,7 @@ public class MyDialogBox extends DialogBox{
 
 	public MyDialogBox(boolean autoHide) {
 		super(autoHide);
+		addStyleName("dialogVPanel");
 	}
 
 	public boolean onEventPreview(Event event)

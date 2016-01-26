@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -18,12 +19,17 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
+import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Frame;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.ResizeLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.SingleSelectionModel;
 
+import br.com.freller.tool.client.Print;
 import br.fapema.morholt.collect.SimpleString;
 import br.fapema.morholt.web.client.gui.AuxiliarInterface;
 import br.fapema.morholt.web.client.gui.DataSource;
@@ -31,6 +37,7 @@ import br.fapema.morholt.web.client.gui.MyPaginationDataGrid;
 import br.fapema.morholt.web.client.gui.basic.BackCallback;
 import br.fapema.morholt.web.client.gui.basic.ConfirmDialog;
 import br.fapema.morholt.web.client.gui.basic.DialogCallback;
+import br.fapema.morholt.web.client.gui.basic.MyDialogBox;
 import br.fapema.morholt.web.client.gui.grid.enter.EnterContent;
 import br.fapema.morholt.web.client.gui.grid.enter.EnterView;
 import br.fapema.morholt.web.client.gui.model.Model;
@@ -70,9 +77,10 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 	private boolean addFeaturedButton = false;
 	private String parentColumn;
 	private String parentColumnLabel;
+	private int width;
 	
-	public GridView(String kind, String keyColumn, AsyncCallback callback, MyServiceClientImpl myService, List<DataSource> dataSources, EnterContent enterView, int heightPct, int numberOfDetailsColumns, CallAfterEditionInterface callAfterEditionInterface, Map<String, List<Model>> mapKindToSmallTables, String parentName, boolean addFeaturedButton) {
-		this(kind, keyColumn, callback, myService, dataSources, enterView, heightPct, numberOfDetailsColumns, callAfterEditionInterface, mapKindToSmallTables, parentName);
+	public GridView(int width, String kind, String keyColumn, AsyncCallback callback, MyServiceClientImpl myService, List<DataSource> dataSources, EnterContent enterView, int heightPct, int numberOfDetailsColumns, CallAfterEditionInterface callAfterEditionInterface, Map<String, List<Model>> mapKindToSmallTables, String parentName, boolean addFeaturedButton) {
+		this(width, kind, keyColumn, callback, myService, dataSources, enterView, heightPct, numberOfDetailsColumns, callAfterEditionInterface, mapKindToSmallTables, parentName);
 		this.addFeaturedButton = addFeaturedButton;
 	}
 	/**
@@ -85,7 +93,8 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 	 * @param callAfterEditionInterface is optional, make a call after edition
 	 * @param mapKindToSmallTables 
 	 */
-	public GridView(String kind, String keyColumn, AsyncCallback callback, MyServiceClientImpl myService, List<DataSource> dataSources, EnterContent enterView, int heightPct, int numberOfDetailsColumns, CallAfterEditionInterface callAfterEditionInterface, Map<String, List<Model>> mapKindToSmallTables, String parentName) {
+	public GridView(int width, String kind, String keyColumn, AsyncCallback callback, MyServiceClientImpl myService, List<DataSource> dataSources, EnterContent enterView, int heightPct, int numberOfDetailsColumns, CallAfterEditionInterface callAfterEditionInterface, Map<String, List<Model>> mapKindToSmallTables, String parentName) {
+		this.width = width;
 		this.dataSources = dataSources;
 		this.enterComposite = enterView;
 		initWidget(aPanel);
@@ -99,8 +108,11 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 		this.mapKindToSmallTables = mapKindToSmallTables;
 		profile = myService.getProfile();
 		
-		aPanel.setWidth("100%");
+		setWidth(width+"px");
+	//	setWidth("100%"); FIXME has to change createView and others
 		
+		//aPanel.setWidth("100%");
+		//aPanel.setWidth(Window.getClientWidth()-this.getAbsoluteLeft() + "px");
 		startCursor = null; 
 		limit = 0;
 		 
@@ -124,14 +136,14 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 	
 	public void showGrid() {
 		aPanel.clear();
-		aPanel.setStylePrimaryName("gridViewPanel");
+		aPanel.addStyleName("gridViewPanel");
 		if(pagingDataGrid == null) {
 			pagingDataGrid = new MyPaginationDataGrid(dataSources, this);
 			setDoubleClickHandler();
 		}
 		
 		pagingDataGrid.setHeight("100%");
-		pagingDataGrid.setWidth("100%");
+		pagingDataGrid.setWidth(Window.getClientWidth()-this.getAbsoluteLeft() + "px");
 		addButtons();
 		 ResizeLayoutPanel resizeLayoutPanel = new ResizeLayoutPanel();
 	    	resizeLayoutPanel.setHeight("100%");
@@ -163,7 +175,7 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 	
 	private void addButtons() {
 		FlowPanel flowPanel = new FlowPanel();
-		flowPanel.addStyleDependentName("flowPanelButtons");
+		flowPanel.addStyleName("flowPanelButtons");
 		if(refinedSearchIsUsed == false)
 			flowPanel.add(createSeachButton());
 		
@@ -185,10 +197,85 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 		if(addFeaturedButton && profile.authenticate(kind, Profile.CRUDEL.FEATURE))
 			flowPanel.add(createFeatureButton());
 		
+		flowPanel.add(createPrintButton());
+		
 		
 		aPanel.addSouth(flowPanel, 2);
 	}
 
+	private Widget createPrintButton() {
+
+		Button printButton = new Button("Imprimir");
+		printButton.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+				int printWidth = 800;        
+				
+				MyDialogBox myDialogBox = new MyDialogBox(true);
+			//	myDialogBox.setWidth(printWidth+"px");
+			//	myDialogBox.addStyleDependentName("print");
+				
+				HorizontalPanel horizontalPanel = new HorizontalPanel();
+				horizontalPanel.add(new Label("testando"));
+				
+				
+				
+
+				SingleSelectionModel<Model> singleSelectionModel = pagingDataGrid.getSelectionModel();
+				if(singleSelectionModel == null) {
+					Window.alert(MSG_SELECT_ITEM);
+					return;
+				}
+				
+				
+				Model selectedModel = pagingDataGrid.getSelectionModel().getSelectedObject();
+			//	DetailView detailView = new DetailView(selectedModel, dataSources, GridView.this, enterComposite, numberOfDetailsColumns, mapKindToSmallTables, getProfile(), myService);
+			//	detailView.setWidth(Window.getClientWidth()-GridView.this.getAbsoluteLeft() + "px");
+
+		//		detailView.setHeight(Window.getClientHeight()-GridView.this.getAbsoluteTop() + "px");
+				FlexTable table = FlexTableHelper.createTable(printWidth, "Detalhes", selectedModel, dataSources, numberOfDetailsColumns, FlexTableEnum.Print, mapKindToSmallTables, profile, myService);
+				
+				table.removeStyleName("table");
+				table.addStyleName("FlexTable");
+				
+				myDialogBox.setWidth("100%");
+				myDialogBox.add(table);
+				String html = table.asWidget().getElement().getInnerHTML();
+
+	//			printMethod(html);
+				//myDialogBox.show();
+				
+				Print.USE_TIMER = true;
+				
+				Print.it("<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>","<link rel=StyleSheet type=text/css media=print href=/Arqueologia_AppEngine.css>", myDialogBox);
+			}
+		});
+		
+		return printButton;
+	}
+	
+	
+	public static native void printMethod(String html) /*-{
+		
+	html='<html><head><link type="text/css" rel="stylesheet" href="/Arqueologia_AppEngine.css"></head><body>'	+ html + '</body></html>';
+	
+	var frame = $doc.getElementById('__printingFrame');
+	if (!frame) {
+	$wnd.alert("Error: Can’t find printing frame. Make sure you had added iframe with id=__printingFrame in HTML file");
+	return;
+	}
+	frame = frame.contentWindow;
+	var doc = frame.document;
+	doc.open();
+	$wnd.alert(html);
+	
+	doc.write(html);
+	doc.close();
+	frame.focus();
+	frame.print();
+	}-*/;
+	
 	private Widget createFeatureButton() {
 		Button featureButton = new Button("Destacar");
 		featureButton.addClickHandler(new ClickHandler() {
@@ -255,8 +342,7 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 		public void onClick(ClickEvent event) {
 			aPanel.clear();
 			log.info("mapKindToSmallTables:" + mapKindToSmallTables);
-			CreateModelView createModelView = new CreateModelView(kind, keyColumn, null, dataSources, getCurrentList(), myService, GridView.this, mapKindToSmallTables, enterSelectedModel, getProfile());
-			createModelView.setWidth(Window.getClientWidth()-GridView.this.getAbsoluteLeft() + "px");
+			CreateModelView createModelView = new CreateModelView(width, kind, keyColumn, null, dataSources, getCurrentList(), myService, GridView.this, mapKindToSmallTables, enterSelectedModel, getProfile());
 			createModelView.setHeight(Window.getClientHeight()-GridView.this.getAbsoluteTop() + "px");
 			aPanel.add(createModelView);
 		}
@@ -324,13 +410,16 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 		return enterButton;
 	}
 	
+	
+	private String getWidth() {
+		return getElement().getStyle().getProperty("width");
+	}
+	
 	private void showDetails(Model selectedModel) {
 		aPanel.clear();
-		DetailView detailView = new DetailView(selectedModel, dataSources, this, enterComposite, numberOfDetailsColumns, mapKindToSmallTables, getProfile(), myService);
-		detailView.setWidth(Window.getClientWidth()-this.getAbsoluteLeft() + "px");
+		DetailView detailView = new DetailView(width, selectedModel, dataSources, this, enterComposite, numberOfDetailsColumns, mapKindToSmallTables, getProfile(), myService);
 
 		detailView.setHeight(Window.getClientHeight()-this.getAbsoluteTop() + "px");
-		   
 		aPanel.add(detailView);
 	}
 	
@@ -350,8 +439,7 @@ public class GridView extends Composite implements BackCallback, EnterInterface{
 	
 	private void edit(Model selectedModel) {
 		aPanel.clear();
-		EditView detailView = new EditView(kind, dataSources, myService, GridView.this, selectedModel, numberOfDetailsColumns, mapKindToSmallTables, callAfterEditionInterface, getProfile());
-		detailView.setWidth(Window.getClientWidth()-this.getAbsoluteLeft() + "px");
+		EditView detailView = new EditView(width, kind, dataSources, myService, GridView.this, selectedModel, numberOfDetailsColumns, mapKindToSmallTables, callAfterEditionInterface, getProfile());
 
 		detailView.setHeight(Window.getClientHeight()-this.getAbsoluteTop() + "px");
 		

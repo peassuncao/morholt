@@ -42,13 +42,17 @@ public class EditView extends Composite  {
 	private Model lastSavedModel;
 	
 	private DialogBox dialogBox;
+	private int width;
 	
-	public EditView(String kind, List<DataSource> dataSources, MyServiceClientImpl myService, BackCallback backCallback, Model selectedModel, int numberOfDetailsColumns, Map<String, List<Model>> mapKindToSmallTables, CallAfterEditionInterface callAfterEditionInterface, Profile profile) {
+	public EditView(int width, String kind, List<DataSource> dataSources, MyServiceClientImpl myService, BackCallback backCallback, Model selectedModel, int numberOfDetailsColumns, Map<String, List<Model>> mapKindToSmallTables, CallAfterEditionInterface callAfterEditionInterface, Profile profile) {
+		this.width = width;
 		this.backCallback = backCallback;
 		this.kind = kind;
 		this.callAfterEditionInterface = callAfterEditionInterface;
 		myServiceClientImpl = myService;
 		initWidget(aPanel);
+		setWidth(width+"px");
+		
 		aPanel.addStyleName("detailPanel");
 		
 		HTMLPanel header = new HTMLPanel ("h1", "Editar");
@@ -64,7 +68,7 @@ public class EditView extends Composite  {
 		backButton.addClickHandler(new BackButtonClickHandler());
 
 		aPanel.addNorth(header, 3);
-		table = FlexTableHelper.createTable("Editar", model, dataSources, numberOfDetailsColumns, FlexTableEnum.Edit, mapKindToSmallTables, profile, myService);
+		table = FlexTableHelper.createTable(width, "Editar", model, dataSources, numberOfDetailsColumns, FlexTableEnum.Edit, mapKindToSmallTables, profile, myService);
 		
 		ScrollPanel tableScrollPanel = new ScrollPanel(table);
 		
